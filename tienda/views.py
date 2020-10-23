@@ -10,3 +10,12 @@ def index(request):
     print("Hola estamos en la ventana index")
     context={}
     return render(request, 'tienda/index.html', context)
+
+def figuras(request):
+    print("Hola estamos en la ventana figuras")
+    context={}
+    return render(request, 'tienda/figuras.html', context)
+def contacto(request):
+    print("Hola estamos en la ventana contacto")
+    context={}
+    return render(request, 'tienda/contacto.html', context)

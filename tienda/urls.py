@@ -19,7 +19,9 @@ from . import views
 
 urlpatterns = [
     path('mangas', views.mangas, name='mangas'),
-    path('index', views.index, name='index')
+    path('index', views.index, name='index'),
+    path('figuras', views.figuras, name='figuras'),
+    path('contacto', views.contacto, name='contacto')
     
 
 ]
