@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def prueba(request):
-    print("Hola estamos en una prueba")
+def mangas(request):
+    print("Hola estamos en la ventana mangas")
     context={}
-    return render(request, 'tienda/prueba.html', context)
+    return render(request, 'tienda/mangas.html', context)
