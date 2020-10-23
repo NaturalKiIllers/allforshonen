@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    {% load static %}
+    <title>{% block title%}   {% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="Estilos.css"/>
+    
+  </head>
+  <body>
+    <header>
+      <nav id="logo">
+        <div class="nav-wrapper white">
+          <a href="index.html" class="brand-logo center" ><img src="imagenes/Index/PROTO.png" style="height: 50%; width: 50%;" alt="logoPag"></a>
+        </div>
+      </nav>
+      <br><br><br>
+    <!--TODO:Barra de navegación (inicio,tienda,ayuda y contacto)-->
+      <nav>
+        <div class="nav-wrapper red">
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+              <a class="dropdown-trigger" href="#!" data-target="dropdown-menu1">Tienda
+              <i class="material-icons right">arrow_drop_down</i></a>
+              <ul id="dropdown-menu1" class="dropdown-content">
+                <li><a href="figuras.html" >Figuras</a></li>
+                <li class="divider"></li>
+                <li><a href="mangas.html">Manga</a></li>
+                <li class="divider"></li>
+                <li><a href="artbooks.html">ArtBook</a></li>
+                <li class="divider"></li>
+              </ul>
+            </li>  
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+    <!--TODO:Menu usuario-->
+          <div class="right hide-on-med-and-down">                   
+            <a class="dropdown-trigger right hide-on-med-and-down" href="#!" data-target="dropdown-menu2">
+            <i class="material-icons right">arrow_drop_down</i>
+            <i class="material-icons">person</i></a>
+            <ul id="dropdown-menu2" class="dropdown-content">
+              <li><a href="registrarse.html">Registrarse</a></li>
+              <li class="divider"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br><br><br>
+    {% block content %}
+
+    {% endblock %}
+  <!--TODO:Footer-->
+<!--TODO:Footer-->
+    <footer class="page-footer grey">
+      <div class="container">
+        <div class="row">
+          <div class="col s3">
+            <br>
+            <img src="imagenes/Index/PROTO.png" class="logo-foot" alt="logofoot"/>
+            <h5 class="black-text" >¿Quiénes somos?</h5>
+            <p class="black-text text-lighten-4">Somos una empresa de distribución de mangas, figuras y  art books, tenemos los mejores precios y ¿Sabes lo mejor?.</p>
+            <p class="black-text"> Llegarán a la puerta de tu casa :D</p>
+            <br>
+          </div>
+          <div class="col s2"></div>
+          <div class="col  s4">
+              <h5 class="black-text">Nuestras Redes Sociales</h5>
+              <ul>
+                <li >
+                  <a href="https://www.facebook.com/" ><img src="imagenes/Redes/Redes/facebook.png" id="redes1" alt="f"></a>
+                  <a href="https://www.instagram.com/" ><img src="imagenes/Redes/Redes/instagram.png" id="redes2" alt="i"></a>
+                  <a href="https://twitter.com/?lang=es" ><img src="imagenes/Redes/Redes/twitter.png" id="redes3" style="height: 35px;" alt="t"></a>
+                  <a href="https://www.pinterest.cl/" ><img src="imagenes/Redes/Redes/pinterest.png" id="redes4" alt="p"></a>
+                </li>
+              </ul>
+          </div>
+          <div class="col s1"></div>
+          <div class="col s3">
+              <h5>Contáctenos</h5>
+              <ul>
+                <li class="black-text"><img src="imagenes/Redes/Redes/house.png" id="contacto1" alt="direccion"> Portal Lyon, Local 22. Providencia</li>
+                <li class="black-text"><img src="imagenes/Redes/Redes/contact.png" id="contacto2" alt="correo"> contacto@allforchonen.cl</li>
+                <li class="black-text"><img src="imagenes/Redes/Redes/smartphone.png" id="contacto3" alt="telefono"> +569 34529900</li>
+              </ul> 
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div>
+          © 2020 Todos los Derechos Reservados por AllForShonen S.A
+        </div>
+      </div>
+    </footer>
+  <!--TODO:Javascript-->
+     
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.slider');
+            var instances = M.Slider.init(elems,{
+          
+            height:600 ,
+            duration:5
+          
+          });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        M.AutoInit()});
+    </script>
+        
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+         var elems = document.querySelectorAll('.dropdown-trigger');
+         var instances = M.Dropdown.init(elems, {
+          coverTrigger:false});
+       
+        });
+
+    </script>
+     {% block javascript%}
+
+     {% endblock%}
+        
+  </body>
+</html>
