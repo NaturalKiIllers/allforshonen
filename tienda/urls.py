@@ -19,7 +19,7 @@ from . import views
 
 urlpatterns = [
     path('mangas', views.mangas, name='mangas'),
-    path('index', views.index, name='index')
-    
-
+    path('index', views.index, name='index'),
+    path('artbooks', views.artbooks, name='artbooks'),
+    path('registrarse', views.registrarse, name='registrarse')
 ]
