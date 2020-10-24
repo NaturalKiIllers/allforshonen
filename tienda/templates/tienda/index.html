@@ -3,7 +3,22 @@
 {%block title %} All for Shonen{% endblock%}
 
 {% block content%}
- <!--TODO:Imagenes manga,figura y artbooks-->
+<br><br><br>
+<!--TODO:Slider-->
+<div class="slider">
+  <ul class="slides">
+    <li>
+      <img src="imagenes/Index/slidder.jpg" style="height: 600px; width: 1905px;" alt="slider-1" class="responsive-image"> <!-- random image -->  
+    </li>
+    <li>
+      <img src="imagenes/Index/slidder2.jpg" style="height: 600px; width: 1905px;" alt="slider-2"> 
+    </li>
+    <li>
+      <img src="imagenes/Index/slidder3.jpg" style="height: 600px; width: 1905px;" class="responsive-image" alt="slider-3"> <!-- random image -->
+    </li>     
+  </ul>
+</div>
+<!--TODO:Imagenes manga,figura y artbooks-->
  <br><br>
  <div class="row">
    <a href="mangas"><img src="Imagenes/Index/Mangas.jpg"  class=" imagen" id="mangas" alt="mangas"></a>
@@ -118,10 +133,7 @@
 {% endblock %}
 
 {% block javascript%}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    M.AutoInit()});
-</script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.slider');

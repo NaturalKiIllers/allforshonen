@@ -1,0 +1,59 @@
+{% extends "tienda/base.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+
+{% block content%}
+<!--TODO:Contacto-->
+<form action="#" method="POST" onsubmit="return validarContacto()"  >
+    <div class="container">
+      <h1>Contacto</h1>
+      <div class="col s1">
+        <div class="input-field">
+          <input type="text" name="nombres" id="nombres"  onkeypress="return soloLetras(event)"  >
+          <label for="nombres">Nombres:</label>
+        </div>
+      </div>
+      <div class="col s4">
+        <div class="input-field">
+          <input type="email" name="correo" id="correo" class="validate" >
+          <label for="correo">Correo:</label>
+          <span class="helper-text" data-error="Escriba un correo válido." data-success="Correo válido">Su correo es muy importante para contactarlo</span>
+        </div>
+      </div>
+      <div class="col s4">
+        <div class="input-field">
+          <input id="input_text" type="text"  data-length="10" name="asunto"  >
+          <label for="input_text">Asunto:</label>
+        </div>
+      </div>
+      <div class="col s4">
+        <div class="input-field">
+          <textarea id="textarea1" class="materialize-textarea"  data-length="120" name="mensaje" ></textarea>
+          <label for="textarea1">Mensaje:</label>
+        </div>
+      </div>
+      <button type="submit" class="btn waves-effect"  >
+        <i class="material-icons right">check</i>
+          Enviar
+      </button>  
+    </div> 
+  </form>  
+  <br>
+{% endblock %}
+
+{% block javascript%}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('#input_text, #textarea1');
+    M.CharacterCounter.init(textNeedCount);
+   });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var textNeedCount = document.querySelectorAll('#input_text, #textarea1');
+    M.CharacterCounter.init(textNeedCount);
+    });
+  </script>
+
+{% endblock %}

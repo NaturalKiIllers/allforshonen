@@ -25,3 +25,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tienda/', include ('tienda.urls'))
 ]
+urlpatterns += staticfiles_urlpatterns()

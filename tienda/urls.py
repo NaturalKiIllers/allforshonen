@@ -20,6 +20,13 @@ from . import views
 urlpatterns = [
     path('mangas', views.mangas, name='mangas'),
     path('index', views.index, name='index'),
+<<<<<<< HEAD
     path('artbooks', views.artbooks, name='artbooks'),
     path('registrarse', views.registrarse, name='registrarse')
+=======
+    path('figuras', views.figuras, name='figuras'),
+    path('contacto', views.contacto, name='contacto')
+    
+
+>>>>>>> 9ca7f4d2f7da407e617b7dfc96d0d3291bec0209
 ]
