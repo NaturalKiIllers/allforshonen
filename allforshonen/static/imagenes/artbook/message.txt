@@ -1,0 +1,493 @@
+Warning: This document appears to be written in Spanish. Consider adding lang="es" (or variant) to the html start tag.
+
+From line 1, column 16; to line 2, column 6
+
+TYPE html>↩<html>↩    <
+
+For further guidance, consult Declaring the overall language of a page and Choosing language tags.
+
+If the HTML checker has misidentified the language of this document, please file an issue report or send e-mail to report the problem.
+
+Error: The character encoding was not declared. Proceeding using windows-1252.
+
+Error: Bad value screen,projection for attribute media on element link: The media projection has been deprecated
+
+From line 6, column 9; to line 6, column 106
+
+>↩        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>↩     
+
+Error: Element a not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
+
+From line 17, column 17; to line 17, column 64
+
+          <a href="index.html" class="brand-logo center" ><img s
+
+Contexts in which element a may be used:
+Where phrasing content is expected.
+Content model for element ul:
+Zero or more li and script-supporting elements.
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 17, column 65; to line 17, column 133
+
+ center" ><img src="imagenes/Index/PROTO.png" style="height: 50%; width: 50%;"></a>↩ 
+
+Error: End tag nav seen, but there were open elements.
+
+From line 18, column 13; to line 18, column 18
+
+          </nav>↩     
+
+Error: Unclosed element ul.
+
+From line 16, column 17; to line 16, column 70
+
+          <ul id="nav-mobile" class="left hide-on-med-and-down">↩     
+
+Error: Unclosed element div.
+
+From line 15, column 17; to line 15, column 47
+
+          <div class="nav-wrapper white">↩     
+
+Error: Duplicate ID nav-mobile.
+
+From line 24, column 21; to line 24, column 74
+
+          <ul id="nav-mobile" class="left hide-on-med-and-down">↩     
+
+Warning: The first occurrence of ID nav-mobile was here.
+
+From line 16, column 17; to line 16, column 70
+
+          <ul id="nav-mobile" class="left hide-on-med-and-down">↩     
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 30, column 56; to line 30, column 73
+
+ras.html"><font color="red">Figura
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 33, column 55; to line 33, column 72
+
+gas.html"><font color="red">Manga<
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 36, column 57; to line 36, column 74
+
+oks.html"><font color="red">Art Bo
+
+Error: Element ul not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
+
+From line 49, column 25; to line 49, column 73
+
+          <ul id="dropdown-menu2" class="dropdown-content">↩     
+
+Contexts in which element ul may be used:
+Where flow content is expected.
+Content model for element ul:
+Zero or more li and script-supporting elements.
+Error: The font element is obsolete. Use CSS instead.
+
+From line 50, column 60; to line 50, column 77
+
+rse.html"><font color="red">Regist
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 52, column 46; to line 52, column 63
+
+href="#!"><font color="red">Incio 
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 67, column 53; to line 67, column 142
+
+f="#one!"><img src="imagenes/mangas/slider/EDIT.png" class="responsive-img" style="height: 400px; "></a>↩ 
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 68, column 53; to line 68, column 142
+
+f="#one!"><img src="imagenes/mangas/slider/SLAM.jpg" class="responsive-img" style="height: 400px; "></a>↩ 
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 69, column 53; to line 69, column 140
+
+f="#one!"><img src="imagenes/mangas/slider/MT.jpg" class="responsive-img" style="height: 400px; "></a>↩ 
+
+Error: Bad value imagenes/mangas/Slam Dunk/slam_dunk_001.jpg for attribute src on element img: Illegal character in path segment: space is not allowed.
+
+From line 89, column 23; to line 89, column 136
+
+          <img class="materialboxed" src="imagenes/mangas/Slam Dunk/slam_dunk_001.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 89, column 23; to line 89, column 136
+
+          <img class="materialboxed" src="imagenes/mangas/Slam Dunk/slam_dunk_001.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: Bad value imagenes/mangas/Slam Dunk/slam_dunk_06.jpg for attribute src on element img: Illegal character in path segment: space is not allowed.
+
+From line 104, column 21; to line 104, column 133
+
+          <img class="materialboxed" src="imagenes/mangas/Slam Dunk/slam_dunk_06.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 104, column 21; to line 104, column 133
+
+          <img class="materialboxed" src="imagenes/mangas/Slam Dunk/slam_dunk_06.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: Bad value imagenes/mangas/Slam Dunk/slam_dunk_10.jpg for attribute src on element img: Illegal character in path segment: space is not allowed.
+
+From line 119, column 19; to line 119, column 131
+
+          <img class="materialboxed" src="imagenes/mangas/Slam Dunk/slam_dunk_10.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 119, column 19; to line 119, column 131
+
+          <img class="materialboxed" src="imagenes/mangas/Slam Dunk/slam_dunk_10.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: Bad value imagenes/mangas/Slam Dunk/slam_dunk_24.jpg for attribute src on element img: Illegal character in path segment: space is not allowed.
+
+From line 134, column 25; to line 134, column 137
+
+          <img class="materialboxed" src="imagenes/mangas/Slam Dunk/slam_dunk_24.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 134, column 25; to line 134, column 137
+
+          <img class="materialboxed" src="imagenes/mangas/Slam Dunk/slam_dunk_24.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 157, column 23; to line 157, column 133
+
+          <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_01.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 172, column 21; to line 172, column 131
+
+          <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_03.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 187, column 19; to line 187, column 129
+
+          <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_04.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 202, column 25; to line 202, column 135
+
+          <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_06.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 217, column 25; to line 217, column 135
+
+          <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_07.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 233, column 21; to line 233, column 58
+
+          <img src="imagenes/mangas/prueba.jpg">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 249, column 15; to line 249, column 137
+
+          <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_01.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 263, column 17; to line 263, column 139
+
+          <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_02.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 277, column 15; to line 277, column 137
+
+          <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_03.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 291, column 15; to line 291, column 137
+
+          <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_08.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 305, column 15; to line 305, column 137
+
+          <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_12.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 319, column 17; to line 319, column 139
+
+          <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_17.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 333, column 19; to line 333, column 141
+
+          <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_18.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 355, column 25; to line 355, column 133
+
+          <img class="materialboxed" src="imagenes/mangas/kimetsu/Kimetsu-04.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 370, column 23; to line 370, column 130
+
+          <img class="materialboxed" src="imagenes/mangas/kimetsu/kimets-08.jpg" style="height: 200px; width: 200px;">↩     
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 392, column 19; to line 392, column 72
+
+          <img src="imagenes/Index/PROTO.png" class="logo-foot">↩     
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 393, column 43; to line 393, column 62
+
+te-text" ><font color="black">Â¿Quie
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 394, column 55; to line 394, column 74
+
+ighten-4"><font color="black">Somos 
+
+Error: End tag p seen, but there were open elements.
+
+From line 394, column 191; to line 394, column 194
+
+lo mejor?.</p><p> Ll
+
+Error: Unclosed element font.
+
+From line 394, column 55; to line 394, column 74
+
+ighten-4"><font color="black">Somos 
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 394, column 198; to line 394, column 233
+
+r?.</p><p> LlegarÃ¡n a la puerta de tu casa :D</p></
+
+Error: End tag p seen, but there were open elements.
+
+From line 394, column 234; to line 394, column 237
+
+tu casa :D</p></font
+
+Error: No font element in scope but a font end tag seen.
+
+From line 394, column 238; to line 394, column 244
+
+asa :D</p></font>↩     
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 400, column 42; to line 400, column 61
+
+ite-text"><font color="black">Nuestr
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 402, column 73; to line 402, column 128
+
+ok.com/" ><img src="imagenes/Redes/Redes/facebook.png" id="redes"></a></
+
+Error: Duplicate ID Redes.
+
+From line 403, column 21; to line 403, column 35
+
+          <li id="Redes"><a hre
+
+Warning: The first occurrence of ID Redes was here.
+
+From line 402, column 21; to line 402, column 35
+
+          <li id="Redes"><a hre
+
+Error: Duplicate ID redes.
+
+From line 403, column 74; to line 403, column 130
+
+am.com/" ><img src="imagenes/Redes/Redes/instagram.png" id="redes"></a></
+
+Warning: The first occurrence of ID redes was here.
+
+From line 402, column 73; to line 402, column 128
+
+ok.com/" ><img src="imagenes/Redes/Redes/facebook.png" id="redes"></a></
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 403, column 74; to line 403, column 130
+
+am.com/" ><img src="imagenes/Redes/Redes/instagram.png" id="redes"></a></
+
+Error: Duplicate ID Redes.
+
+From line 404, column 21; to line 404, column 35
+
+          <li id="Redes"><a hre
+
+Warning: The first occurrence of ID Redes was here.
+
+From line 402, column 21; to line 402, column 35
+
+          <li id="Redes"><a hre
+
+Error: Duplicate ID redes.
+
+From line 404, column 76; to line 404, column 152
+
+lang=es" ><img src="imagenes/Redes/Redes/twitter.png" id="redes" style="height: 35px;"></a></
+
+Warning: The first occurrence of ID redes was here.
+
+From line 402, column 73; to line 402, column 128
+
+ok.com/" ><img src="imagenes/Redes/Redes/facebook.png" id="redes"></a></
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 404, column 76; to line 404, column 152
+
+lang=es" ><img src="imagenes/Redes/Redes/twitter.png" id="redes" style="height: 35px;"></a></
+
+Error: Duplicate ID Redes.
+
+From line 405, column 21; to line 405, column 35
+
+          <li id="Redes"><a hre
+
+Warning: The first occurrence of ID Redes was here.
+
+From line 402, column 21; to line 402, column 35
+
+          <li id="Redes"><a hre
+
+Error: Duplicate ID redes.
+
+From line 405, column 73; to line 405, column 129
+
+est.cl/" ><img src="imagenes/Redes/Redes/pinterest.png" id="redes"></a></
+
+Warning: The first occurrence of ID redes was here.
+
+From line 402, column 73; to line 402, column 128
+
+ok.com/" ><img src="imagenes/Redes/Redes/facebook.png" id="redes"></a></
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 405, column 73; to line 405, column 129
+
+est.cl/" ><img src="imagenes/Redes/Redes/pinterest.png" id="redes"></a></
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 412, column 25; to line 412, column 80
+
+      <li><img src="imagenes/Redes/Redes/house.png" id="contacto"><font 
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 412, column 81; to line 412, column 111
+
+contacto"><font size="3px" color="black"> Porta
+
+Error: Duplicate ID contacto.
+
+From line 413, column 25; to line 413, column 82
+
+      <li><img src="imagenes/Redes/Redes/contact.png" id="contacto"><font 
+
+Warning: The first occurrence of ID contacto was here.
+
+From line 412, column 25; to line 412, column 80
+
+      <li><img src="imagenes/Redes/Redes/house.png" id="contacto"><font 
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 413, column 25; to line 413, column 82
+
+      <li><img src="imagenes/Redes/Redes/contact.png" id="contacto"><font 
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 413, column 83; to line 413, column 113
+
+contacto"><font size="3px" color="black">  cont
+
+Error: Duplicate ID contacto.
+
+From line 414, column 25; to line 414, column 85
+
+      <li><img src="imagenes/Redes/Redes/smartphone.png" id="contacto"><font 
+
+Warning: The first occurrence of ID contacto was here.
+
+From line 412, column 25; to line 412, column 80
+
+      <li><img src="imagenes/Redes/Redes/house.png" id="contacto"><font 
+
+Error: An img element must have an alt attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images.
+
+From line 414, column 25; to line 414, column 85
+
+      <li><img src="imagenes/Redes/Redes/smartphone.png" id="contacto"><font 
+
+Error: The font element is obsolete. Use CSS instead.
+
+From line 414, column 86; to line 414, column 116
+
+contacto"><font size="3px" color="black"> +569 
+
+Warning: The type attribute is unnecessary for JavaScript resources.
+
+From line 442, column 9; to line 442, column 67
+
+↩↩        <script type="text/javascript" src="js/materialize.min.js"></scri
+
+Error: End tag for body seen, but there were unclosed elements.
+
+From line 480, column 5; to line 480, column 11
+
+     ↩    </body>↩↩↩↩↩<
+
+Error: Unclosed element div.
+
+From line 239, column 8; to line 239, column 30
+
+->↩       <div class="Fullmetal">↩     
+
+Error: Unclosed element div.
+
+From line 76, column 9; to line 76, column 37
+
+>↩        <div class="productos Ivrea">↩     

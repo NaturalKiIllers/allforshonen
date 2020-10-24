@@ -1,0 +1,68 @@
+*{
+    padding:0;
+    margin:0;
+}
+    nav{
+        position: fixed;
+        z-index:100;
+    }
+
+#dropdown-menu1 a, #dropdown-menu2 a{
+    color:red;
+}
+
+#logo{
+    height: 100px;
+}
+
+.logo-foot{
+    height: 30px;
+}
+
+.parallax-container {
+    height: 700px;
+
+  }
+#redes1,#redes2,#redes3,#redes4{
+    height: 30px;
+}
+#contacto1,#contacto2,#contacto3{
+    height: 40px;
+}
+.imagen {
+    height: 33.3%;
+    width: 33.3%;
+    border: none;
+    float: left;
+    position: relative;
+    padding: 0%;
+    
+    
+    }
+.imagen2 {
+    height: 100px;
+    width: 100%;
+    border: none;
+    float: left;
+    position: relative;
+    padding: 0%;
+    
+    
+    }
+#mangas:hover,#figuras:hover,#artbook:hover {
+    filter: opacity(.5);
+}
+#ofertas:hover {
+    filter: opacity(.5);
+      
+    
+}
+
+h3,h5{
+    size: 10px;
+    color: black;
+}
+
+
+
+

@@ -3,32 +3,32 @@
 {%block title %} All for Shonen{% endblock%}
 
 {% block content%}
-<br><br><br>
+
 <!--TODO:Slider-->
 <div class="slider">
   <ul class="slides">
     <li>
-      <img src="static/imagenes/Index/slidder.jpg" style="height: 600px; width: 1905px;" alt="slider-1" class="responsive-image"> <!-- random image -->  
+      <img src="{% static 'imagenes/Index/slidder.jpg' %}" style="height: 600px; width: 1905px;" alt="slider-1" class="responsive-image"> <!-- random image -->  
     </li>
     <li>
-      <img src="imagenes/Index/slidder2.jpg" style="height: 600px; width: 1905px;" alt="slider-2"> 
+      <img src="{% static 'imagenes/Index/slidder2.jpg' %}" style="height: 600px; width: 1905px;" alt="slider-2"> 
     </li>
     <li>
-      <img src="imagenes/Index/slidder3.jpg" style="height: 600px; width: 1905px;" class="responsive-image" alt="slider-3"> <!-- random image -->
+      <img src="{% static 'imagenes/Index/slidder3.jpg' %}" style="height: 600px; width: 1905px;" class="responsive-image" alt="slider-3"> <!-- random image -->
     </li>     
   </ul>
 </div>
 <!--TODO:Imagenes manga,figura y artbooks-->
  <br><br>
  <div class="row">
-   <a href="mangas"><img src="Imagenes/Index/Mangas.jpg"  class=" imagen" id="mangas" alt="mangas"></a>
-   <a href="figuras"><img src="Imagenes/Index/Figuras.jpg"  class=" imagen" id="figuras" alt="figuras"></a>
-   <a href="artbooks"><img src="Imagenes/Index/Art.jpg"  class=" imagen" id="artbook" alt="artbooks"></a>
+   <a href="mangas"><img src="{% static 'Imagenes/Index/Mangas.jpg' %}"  class=" imagen" id="mangas" alt="mangas"></a>
+   <a href="figuras"><img src="{% static 'Imagenes/Index/Figuras.jpg' %}"  class=" imagen" id="figuras" alt="figuras"></a>
+   <a href="artbooks"><img src="{% static 'Imagenes/Index/Art.jpg' %}"  class=" imagen" id="artbook" alt="artbooks"></a>
  </div>
 
 <!--TODO:Ofertas-->
  <div class="row">
-   <a href=""><img src="Imagenes/Index/Ofertas.png" class=" imagen2"  id="ofertas" alt="ofertas"></a>
+   <a href=""><img src="{% static 'Imagenes/Index/Ofertas.png' %}" class=" imagen2"  id="ofertas" alt="ofertas"></a>
  </div>
  <!--TODO:Prximanmente-->
  <aside>
@@ -40,7 +40,7 @@
 
      <div class="card white left hoverable" style="height: 320px; width: 200px;">
        <div class="card-image">
-         <img class="materialboxed" src="Imagenes/Index/Bersek.jpg" style="height: 200px; width: 200px;" alt="berserk">
+         <img class="materialboxed" src="{% static 'Imagenes/Index/Bersek.jpg' %}" style="height: 200px; width: 200px;" alt="berserk">
        </div>
        <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">Berserk Volumen:4<i class="material-icons right">more_vert</i></span>
@@ -55,7 +55,7 @@
      <div class="col 1"></div>
      <div class="card white left hoverable" style="height: 320px; width: 200px;">
        <div class="card-image">
-         <img class="materialboxed" src="Imagenes/Index/aKIRAjpg.jpg" style="height: 200px; width: 200px;" alt="akira">
+         <img class="materialboxed" src="{% static 'Imagenes/Index/aKIRAjpg.jpg' %}" style="height: 200px; width: 200px;" alt="akira">
        </div>
        <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">Akira Volumen:2 <i class="material-icons right">more_vert</i></span>
@@ -69,7 +69,7 @@
      <div class="col 1"></div>   
      <div class="card white left hoverable" style="height: 320px; width: 200px;">
        <div class="card-image">
-         <img class="materialboxed" src="Imagenes/Index/Spy.jpg" style="height: 200px; width: 200px;" alt="spyx">
+         <img class="materialboxed" src="{% static 'Imagenes/Index/Spy.jpg' %}" style="height: 200px; width: 200px;" alt="spyx">
        </div>
        <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">SPY X FAMILY Volumen:2<i class="material-icons right">more_vert</i></span>
@@ -84,7 +84,7 @@
      <div class="col 1"></div>
      <div class="card white left hoverable" style="height: 320px; width: 220px;">
        <div class="card-image">
-         <img class="materialboxed" src="Imagenes/Index/sa.jpg" style="height: 200px; width: 200px;" alt="sangatsu">
+         <img class="materialboxed" src="{% static 'Imagenes/Index/sa.jpg' %}" style="height: 200px; width: 200px;" alt="sangatsu">
        </div>
        <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">Sangatsu no Lion Volumen:12<i class="material-icons right">more_vert</i></span>
@@ -99,7 +99,7 @@
      <div class="col 1"></div>
      <div class="card white left hoverable" style="height: 320px; width: 220px;">
        <div class="card-image">
-         <img class="materialboxed" src="Imagenes/Index/souljpg.jpg" style="height: 200px; width: 200px;" alt="soul">
+         <img class="materialboxed" src="{% static 'Imagenes/Index/souljpg.jpg' %}" style="height: 200px; width: 200px;" alt="soul">
        </div>
        <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">SOUL EATER SOUL ART<i class="material-icons right">more_vert</i></span>
@@ -114,7 +114,7 @@
      <div class="col 1"></div>
      <div class="card white left hoverable" style="height: 320px; width: 220px;">
        <div class="card-image">
-         <img class="materialboxed" src="Imagenes/Index/full.jpg" style="height: 200px; width: 200px;" alt="art-full">
+         <img class="materialboxed" src="{% static 'Imagenes/Index/full.jpg' %}" style="height: 200px; width: 200px;" alt="art-full">
        </div>
        <div class="card-content">
          <span class="card-title activator grey-text text-darken-4">FULLMETAL ALCHEMIST ART<i class="material-icons right">more_vert</i></span>
