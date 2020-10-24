@@ -11,7 +11,6 @@ def index(request):
     context={}
     return render(request, 'tienda/index.html', context)
 
-<<<<<<< HEAD
 def artbooks(request):
     print("Hola estamos en la ventana artbooks")
     context={}
@@ -21,7 +20,6 @@ def registrarse(request):
     print("Hola estamos en la ventana registrarse")
     context={}
     return render(request, 'tienda/registrarse.html', context)
-=======
 def figuras(request):
     print("Hola estamos en la ventana figuras")
     context={}
@@ -30,4 +28,3 @@ def contacto(request):
     print("Hola estamos en la ventana contacto")
     context={}
     return render(request, 'tienda/contacto.html', context)
->>>>>>> 9ca7f4d2f7da407e617b7dfc96d0d3291bec0209
