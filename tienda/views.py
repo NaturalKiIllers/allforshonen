@@ -11,6 +11,15 @@ def index(request):
     context={}
     return render(request, 'tienda/index.html', context)
 
+def artbooks(request):
+    print("Hola estamos en la ventana artbooks")
+    context={}
+    return render(request, 'tienda/artbooks.html', context)
+
+def registrarse(request):
+    print("Hola estamos en la ventana registrarse")
+    context={}
+    return render(request, 'tienda/registrarse.html', context)
 def figuras(request):
     print("Hola estamos en la ventana figuras")
     context={}
