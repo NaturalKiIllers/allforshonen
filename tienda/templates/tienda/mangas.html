@@ -1,5 +1,5 @@
 {% extends "tienda/base.html" %}
-
+{% load static %}
 {%block title %} All for Shonen{% endblock%}
 
 {% block content%}
@@ -8,9 +8,9 @@
       <div class="row">
         <div class="col s3"></div>
         <div class="carousel carousel-slider " style="height: 450px; width: 1300px;">
-          <a class="carousel-item" href="#one!"><img src="imagenes/mangas/slider/EDIT.png" class="responsive-img" style="height: 400px;" alt="carrusel-1"></a>
-          <a class="carousel-item" href="#one!"><img src="imagenes/mangas/slider/SLAM.jpg" class="responsive-img" style="height: 400px; " alt="carrusel-2"></a>
-          <a class="carousel-item" href="#one!"><img src="imagenes/mangas/slider/MT.jpg" class="responsive-img" style="height: 400px; " alt="carrusel-3"></a>
+          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/EDIT.png' %}" class="responsive-img" style="height: 400px;" alt="carrusel-1"></a>
+          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/SLAM.jpg' %}" class="responsive-img" style="height: 400px; " alt="carrusel-2"></a>
+          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/MT.jpg' %}" class="responsive-img" style="height: 400px; " alt="carrusel-3"></a>
         </div>
       </div>
     </div>
@@ -179,7 +179,7 @@
         <!--TODO:IMAGEN DE FONDO-->     
     <div class="parallax-container">
       <div class="parallax">
-        <img src="imagenes/mangas/prueba.jpg" alt="paralax">
+        <img src="{% static 'imagenes/mangas/prueba.jpg' %}" alt="paralax">
       </div>
     </div>
         
