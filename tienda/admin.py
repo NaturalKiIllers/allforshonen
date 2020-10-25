@@ -5,3 +5,5 @@ from.models import Artbook
 admin.site.register(Figura)
 admin.site.register(Manga)
 admin.site.register(Artbook)
+
+
