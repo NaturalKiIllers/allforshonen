@@ -22,12 +22,11 @@
    <!--One piece-->
    <br><br><br>
    
-   <aside>
+   
      <div class="row">
        <div class="col s1"></div>
        <h1>One Piece</h1>
        <br>
-      
        <div class="col s1"></div>
        {% for figura in figuras %}
         {% if figura.anime == "One piece" %}
@@ -46,8 +45,10 @@
            <p> Material:	{{figura.material}}</p> 
            <p>Tipo Figura:	{{figura.tipo}}</p>
          </div>
-       </div> 
-       {% endif %}
+       </div>  
+       <div class="col 1"></div>
+       {% endif %} 
+      
        {% endfor %}
       
       </div>
@@ -78,11 +79,14 @@
            <p> Altura:	{{figura.altura}}cm</p>
            <p> Material:	{{figura.material}}</p> 
            <p>Tipo Figura:	{{figura.tipo}}</p>
-         </div>
-       </div> 
-       {% endif %}
-       {% endfor %}
-      </div> 
+          </div>
+        </div>  
+        <div class="col 1"></div>
+        {% endif %} 
+       
+        {% endfor %}
+       
+       </div>
       
    <!--SAINT SEIYA-->
      <div class="row">
@@ -90,23 +94,30 @@
        <h1>Saint Seiya</h1>
        <br>
        <div class="col s1"></div>
+       {% for figura in figuras %}
+        {% if figura.anime == "Saint Seiya" %}
        <div class="card white left hoverable" style="height: 320px; width: 200px;">
          <div class="card-image">
-           <img class="materialboxed" src="imagenes/Figuras/Dohko.jpg" alt="doh" style="height: 200px; width: 200px;">
+           <img class="materialboxed" src="{{figura.foto.url}}"  style="height: 200px; width: 200px;">
          </div>
          <div class="card-content">
-           <span class="card-title activator grey-text text-darken-4">Libra Dohko <i class="material-icons right">more_vert</i></span>
-           <p><a href="#">$113.993</a></p>
+           <span class="card-title activator grey-text text-darken-4">{{figura.nombre}}<i class="material-icons right">more_vert</i></span>
+           <p><a href="#">$63.990</a></p>
          </div>
          <div class="card-reveal">
-           <span class="card-title grey-text text-darken-4">Libra Dohko - Saint Cloth Myth EX (God Cloth)<i class="material-icons right">close</i></span>
+           <span class="card-title grey-text text-darken-4">{{figura.descripcion}}<i class="material-icons right">close</i></span>
            <p>Especificaciones</p>
-           <p>Peso:1.70kg</p> 
-           <p>Tipo Figura:	Articulada</p>
-         </div>
+           <p> Altura:	{{figura.altura}}cm</p>
+           <p> Material:	{{figura.material}}</p> 
+           <p>Tipo Figura:	{{figura.tipo}}</p>
+          </div>
+        </div>  
+        <div class="col 1"></div>
+        {% endif %} 
+       
+        {% endfor %}
+       
        </div>
-      </div>
-      
  
 {% endblock %}
 
