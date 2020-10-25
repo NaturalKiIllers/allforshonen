@@ -2,12 +2,15 @@ from django.shortcuts import render
 from django.contrib import admin
 from django.urls import path, include
 from .models import Figura
+from .models import Manga
+from .models import Artbook
 from . import views
 
 # Create your views here.
 def mangas(request):
     print("Hola estamos en la ventana mangas")
-    context={}
+    manga= Manga.objects.all()
+    context={ 'mangas': manga}
     return render(request, 'tienda/mangas.html', context)
 
 def index(request):
@@ -17,7 +20,8 @@ def index(request):
 
 def artbooks(request):
     print("Hola estamos en la ventana artbooks")
-    context={}
+    artbook= Artbook.objects.all()
+    context={ 'artbooks' : artbook}
     return render(request, 'tienda/artbooks.html', context)
 
 def registrarse(request):

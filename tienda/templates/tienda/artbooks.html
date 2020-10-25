@@ -15,174 +15,42 @@
       </div>
     </div>
     <!--ArtBooks-->
-    <div class="row">
-      <div class="col s1"></div>
-      <h1>ArtBooks</h1>
-      <br>
-      <div class="col s1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/onepiece1.png" alt="one" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">One Piece Strong World<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$18.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">One Piece Strong World<i class="material-icons right">close</i></span>
-          <p>ArtBook referente a la pelicula del 10°Aniversario de one piece.</p>
-        </div>
-      </div>
-      <div class="col 1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/haykyuu1.jpg" alt="hay" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Artbook Haikyuu!<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$22.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Artbook Haikyuu!<i class="material-icons right">close</i></span>
-          <p>ArtBook del famoso anime de deporte Haikyuu.</p>
-        </div>
-      </div>
-      <div class="col 1"></div>   
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/zootopia1.jpg" alt="zoo" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">The art of Zootopia<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$33.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">The art of Zootopia<i class="material-icons right">close</i></span>
-          <p>Libro que muestra los diseños de los personajes de Zootopia.</p>
-        </div>
-      </div>
-      <div class="col 1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/pokemon1.jpg" alt="pok" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Pokémon 20th Anniversary<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$14.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Pokémon Adventures 20th Anniversary Illustration Book: The Art of Pokémon<i class="material-icons right">close</i></span>
-          <p>Libro de ilustraciones de la mitica seria pokémon.</p>
-        </div>
-      </div>
-      <div class="col 1"></div>
+    <div class="container ">
+      <div class="row">
+        <div class="col 1"></div>
+        <h1>Artbooks</h1>
+        <br>
+        <div class="col 1"></div>
+        {% for artbook in artbooks %}
+          
         <div class="card white left hoverable" style="height: 320px; width: 200px;">
           <div class="card-image">
-            <img class="materialboxed" src="imagenes/artbook/kimetsu1.jpg" alt="kime"  style="height: 200px; width: 200px;">
+            <img class="materialboxed" src="{{artbook.fotoArtbook.url}}"  style="height: 200px; width: 200px;">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Kimetsu No Yaiba<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$32.990</a></p>
+            <span class="card-title activator grey-text text-darken-4">{{artbook.nombre}}<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">${{artbook.precio}}</a></p>
           </div>
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Kimetsu No Yaiba<i class="material-icons right">close</i></span>
-            <p>Libro de arte del anime de kimetsu no yaiba.</p>
+            <span class="card-title grey-text text-darken-4">{{artbook.nombre_desc}}<i class="material-icons right">close</i></span>
+            <p>{{artbook.descripcion}}</p>
+            
           </div>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col s1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/kirby1.jpg" alt="kir" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">ArtBook Kirby collection<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$24.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Kirby art & style collection<i class="material-icons right">close</i></span>
-          <p>Libro de arte de Kirby,un mitico personaje de videojuegos.</p>
-        </div>
+        </div>  
+        <div class="col 1"></div>
+
+       {% endfor %}
+      
       </div>
-      <div class="col 1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/cardcaptor20th1.jpg" alt="card" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">CardCaptor 20t Aniversario<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$15.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">CardCaptor 20t Aniversario<i class="material-icons right">close</i></span>
-          <p>Artbook Edicion especial 20 aniversario de de la serie Sakura Cardcaptor.</p>
-        </div>
       </div>
-      <div class="col 1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/cardcaptorCol1_1.jpg" alt="cardc" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">CardCaptor Collection 1<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$14.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">CardCaptor Collection 1<i class="material-icons right">close</i></span>
-          <p>Libro de arte de de la famosa serie Sakura Cardcaptor N°1.</p>
-        </div>
-      </div>
-      <div class="col 1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/cardcaptorCol2_1.jpg"  alt="card" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">CardCaptor Collection 2<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$14.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">CardCaptor Collection 2<i class="material-icons right">close</i></span>
-          <p>Libro de arte de de la famosa serie Sakura Cardcaptor N°2.</p>
-        </div>
-      </div>
-      <div class="col 1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/cardcaptorCol3_1.jpg" alt="cardc" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">CardCaptor Collection 3<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$14.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">CardCaptor Collection 3<i class="material-icons right">close</i></span>
-          <p>Libro de arte de de la famosa serie Sakura Cardcaptor N°3.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s1"></div>
-      <div class="card white left hoverable" style="height: 320px; width: 200px;">
-        <div class="card-image">
-          <img class="materialboxed" src="imagenes/artbook/little1.jpg" alt="litt" style="height: 200px; width: 200px;">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Little Witch artbook<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">$32.990</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Little Witch artbook<i class="material-icons right">close</i></span>
-          <p>Libro de arte del anime de las brujitas little witch.</p>
-        </div>
-      </div>
-    </div>
+    
     <!--parallax-->
+    <div class="col s1"></div>
     <div class="parallax-container">
       <div class="parallax">
           <img src="{% static 'imagenes/artbook/paralax.jpg' %}" alt="para">
       </div>
     </div>
+  </div>
     <br>
 {% endblock %}
