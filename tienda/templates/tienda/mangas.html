@@ -1,344 +1,152 @@
 {% extends "tienda/base.html" %}
-
+{% load static %}
 {%block title %} All for Shonen{% endblock%}
 
 {% block content%}
+
     <br><br><br><br>
     <div class="container">
       <div class="row">
         <div class="col s3"></div>
         <div class="carousel carousel-slider " style="height: 450px; width: 1300px;">
-          <a class="carousel-item" href="#one!"><img src="imagenes/mangas/slider/EDIT.png" class="responsive-img" style="height: 400px;" alt="carrusel-1"></a>
-          <a class="carousel-item" href="#one!"><img src="imagenes/mangas/slider/SLAM.jpg" class="responsive-img" style="height: 400px; " alt="carrusel-2"></a>
-          <a class="carousel-item" href="#one!"><img src="imagenes/mangas/slider/MT.jpg" class="responsive-img" style="height: 400px; " alt="carrusel-3"></a>
+          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/EDIT.png' %}" class="responsive-img" style="height: 400px;" alt="carrusel-1"></a>
+          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/SLAM.jpg' %}" class="responsive-img" style="height: 400px; " alt="carrusel-2"></a>
+          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/MT.jpg' %}" class="responsive-img" style="height: 400px; " alt="carrusel-3"></a>
         </div>
       </div>
     </div>
     <br>
-        <!--TODO:Productos-->
+      <!--TODO:Productos-->
        <!--TODO:Slam Dunk-->
-    <div class="productos Ivrea">
+    <div class="row">
+      <h1>Productos Ivrea España</h1>
+    </div>
+    <div class="row">
+      <div class="col s1"></div>
+      <h1>Slam Dunk</h1>
+      <br>
+      <div class="col s1"></div>
+       {% for manga in mangas %}
+        {% if manga.tipo == "Slam Dunk"  %}
+       <div class="card white left hoverable" style="height: 320px; width: 200px;">
+         <div class="card-image">
+           <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
+         </div>
+         <div class="card-content">
+           <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
+           <p><a href="#">${{manga.precio}}</a></p>
+         </div>
+         <div class="card-reveal">
+           <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
+           <p>{{manga.descripcion}}</p>
+           
+         </div>
+       </div>  
+       <div class="col 1"></div>
+       {% endif %}  
+      
+       {% endfor %}
+      
+      </div>
+     
       <div class="row">
-        <h1>Productos Ivrea España</h1>
-        <div class="row">
-          <div class="col s1"></div>
-          <h3>Slam Dunk</h3>
-          <br>
-          <div class="col s1"></div>
-          <div class="card white left hoverable" style="height: 300px; width: 200px;">
-            <div class="card-image">
-              <img class="materialboxed" src="imagenes/mangas/SlamDunk/slam_dunk_001.jpg" style="height: 200px; width: 200px;" alt="slam01">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Slam Dunk 01<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">$ 13.000</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Slam dunk Kanzenban Tomo 01<i class="material-icons right">close</i></span>
-              <p>Primer tomo recopilatorio del manga Slam Dunk.</p>
-            </div>  
-          </div>
-
-          <div class="col 1"></div>
-
-          <div class="card white left hoverable" style="height: 300px; width: 200px;">
-            <div class="card-image">
-              <img class="materialboxed" src="imagenes/mangas/SlamDunk/slam_dunk_06.jpg" style="height: 200px; width: 200px;" alt="slam06">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Slam Dunk 06<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">$ 13.000</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Slam Dunk Kanzenban Tomo 06<i class="material-icons right">close</i></span>
-              <p>Sexto tomo recopilatorio del manga Slam Dunk.</p>
-            </div>
-          </div>
-                
-          <div class="col 1"></div>   
-          
-          <div class="card white left hoverable" style="height: 300px; width: 200px;">
-            <div class="card-image">
-              <img class="materialboxed" src="imagenes/mangas/SlamDunk/slam_dunk_10.jpg" style="height: 200px; width: 200px;" alt="slam10">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Slam Dunk 10<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">$ 13.000</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Slam Dunk Kanzenban Tomo 10<i class="material-icons right">close</i></span>
-              <p>Decimo tomo recopilatorio del manga Slam Dunk.</p>
-            </div>
-          </div>
-                
-          <div class="col 1"></div>
-          
-          <div class="card white left hoverable" style="height: 300px; width: 200px;">
-            <div class="card-image">
-              <img class="materialboxed" src="imagenes/mangas/SlamDunk/slam_dunk_24.jpg" style="height: 200px; width: 200px;" alt="slam24">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Slam Dunk 24<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">$13.000</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Slam Dunk Kanzenban Tomo 24<i class="material-icons right">close</i></span>
-              <p>Ultimo tomo recopilatorio del manga Slam Dunk</p>
-            </div>
+        <div class="col s1"></div>
+        <h1>Dr.Stone</h1>
+        <br>
+        <div class="col s1"></div>
+         {% for manga in mangas %}
+          {% if manga.tipo == "Dr.Stone"  %}
+         <div class="card white left hoverable" style="height: 320px; width: 200px;">
+           <div class="card-image">
+             <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
+           </div>
+           <div class="card-content">
+             <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
+             <p><a href="#">${{manga.precio}}</a></p>
+           </div>
+           <div class="card-reveal">
+             <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
+             <p>{{manga.descripcion}}</p>
+             
+           </div>
+         </div>  
+         <div class="col 1"></div>
+         
+        {% endif %}  
+        
+         {% endfor %}
+        
+        </div>
+        <!--TODO:IMAGEN DE FONDO-->     
+        <div class="parallax-container">
+          <div class="parallax">
+            <img src="{% static 'imagenes/mangas/prueba.jpg'%}" alt="paralax">
           </div>
         </div>
-
-        <!--TODO:Dr.Stone-->
-        <div class="Dr.Stone">
-          <div class="row">
-            <div class="col s1"></div>
-            <h3>Dr.Stone</h3>
-            <br>
-            <div class="col s1"></div>
-            <div class="card white left hoverable" style="height: 300px; width: 200px;">
-              <div class="card-image">
-                <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_01.jpg" style="height: 200px; width: 200px;" alt="dr01">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Dr.Stone 01<i class="material-icons right">more_vert</i></span>
-                <p><a href="#">$ 9.500</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Dr.Stone Tomo 01<i class="material-icons right">close</i></span>
-                <p>Primer tomo recopilatorio de la famosa serie Dr. Stone.</p>
-              </div>
-            </div>
-                
-            <div class="col 1"></div>
-          
-            <div class="card white left hoverable" style="height: 300px; width: 200px;">
-              <div class="card-image">
-                <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_03.jpg" style="height: 200px; width: 200px;" alt="dr03">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Dr.Stone 03<i class="material-icons right">more_vert</i></span>
-                <p><a href="#">$ 9.500</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Dr.Stone Tomo 03<i class="material-icons right">close</i></span>
-                <p>Tercer tomo recopilatorio de la famosa serie Dr. Stone.</p>
-              </div>
-            </div>
-                
-            <div class="col 1"></div>   
-          
-            <div class="card white left hoverable" style="height: 300px; width: 200px;">
-              <div class="card-image">
-                <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_04.jpg" style="height: 200px; width: 200px;" alt="dr04">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Dr.Stone 04<i class="material-icons right">more_vert</i></span>
-                <p><a href="#">$ 9.500</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Dr.Stone Tomo 04<i class="material-icons right">close</i></span>
-                <p>Cuarto tomo recopilatorio de la famosa serie Dr.Stones.</p>
-              </div>
-            </div>
-
-            <div class="col 1"></div>
-            
-            <div class="card white left hoverable" style="height: 300px; width: 200px;">
-              <div class="card-image">
-                <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_06.jpg" style="height: 200px; width: 200px;" alt="dr06">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Dr.Stone 06<i class="material-icons right">more_vert</i></span>
-                <p><a href="#">$ 9.500</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Dr.Stone Tomo 06<i class="material-icons right">close</i></span>
-                <p>Sexto tomo recopilatorio de la famosa serie Dr.Stone.</p>
-              </div>
-            </div>
-                
-            <div class="col 1"></div>
-          
-            <div class="card white left hoverable" style="height: 300px; width: 200px;">
-              <div class="card-image">
-                <img class="materialboxed" src="imagenes/mangas/Dr.Stone/dr_stone_07.jpg" style="height: 200px; width: 200px;" alt="dr07">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Dr.Stone 07<i class="material-icons right">more_vert</i></span>
-                <p><a href="#">$ 9.500</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Dr.Stone Tomo 07<i class="material-icons right">close</i></span>
-                <p>Septimo tomo recopilatorio de la famosa serie Dr.Stone.</p>
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div>
-    </div>
-        <!--TODO:IMAGEN DE FONDO-->     
-    <div class="parallax-container">
-      <div class="parallax">
-        <img src="imagenes/mangas/prueba.jpg" alt="paralax">
-      </div>
-    </div>
         
        <!--TODO:productos Norma-->
        <!--TODO:Fullmetal-->
-    <div class="Fullmetal">
-      <h1>Productos Norma España</h1>
+       <div class="row">
+        <h1>Productos Norma España</h1>
+      </div>
       <div class="row">
         <div class="col s1"></div>
-        <h3>Fullmetal Alquimist</h3>
+        <h1>Fullmetal Alchimist Brotherhood</h1>
         <br>
         <div class="col s1"></div>
-        <div class="card white left hoverable" style="height: 330px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_01.jpg" style="height: 200px; width: 200px;" alt="full01">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Fullmetal Alchemist 01<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$ 14.500 </a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Fullmetal Alchemist Kanzenban Tomo 01<i class="material-icons right">close</i></span>
-            <p>Primer tomo del famoso manga Fullmetal Alchemist, cuesta la historia de los hermanos elric y las travesias que recorreran...</p>
-          </div>
-        </div>
+         {% for manga in mangas %}
+          {% if manga.tipo == "Fullmetal Alchemist"  %}
+         <div class="card white left hoverable" style="height: 320px; width: 200px;">
+           <div class="card-image">
+             <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
+           </div>
+           <div class="card-content">
+             <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
+             <p><a href="#">${{manga.precio}}</a></p>
+           </div>
+           <div class="card-reveal">
+             <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
+             <p>{{manga.descripcion}}</p>
+             
+           </div>
+         </div>  
+         <div class="col 1"></div>
+         {% endif %}  
         
-        <div class="col 1"></div>
-            
-        <div class="card white left hoverable" style="height: 330px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_02.jpg" style="height: 200px; width: 200px;" alt="full02">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Fullmetal Alchemist 02<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$ 14.500</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Fullmetal Alchemist Kanzenban Tomo 02<i class="material-icons right">close</i></span>
-            <p>Segundo tomo del famoso manga Fullmetal Alchemist, cuesta la historia de los hermanos elric y las travesias que recorreran...</p>
-          </div>
-        </div>
-
-        <div class="col 1"></div>
-
-        <div class="card white left hoverable" style="height: 330px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_03.jpg" style="height: 200px; width: 200px;" alt="full03">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Fullmetal Alchemist 03<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$ 14.500</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Fullmetal Alchemist Kanzenban Tomo 03<i class="material-icons right">close</i></span>
-            <p>Tercer tomo del famoso manga Fullmetal Alchemist, cuesta la historia de los hermanos elric y las travesias que recorreran...</p>
-          </div>
-        </div>
-
-        <div class="col 1"></div>
-            
-        <div class="card white left hoverable" style="height: 330px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_08.jpg" style="height: 200px; width: 200px;" alt="full08">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Fullmetal Alchemist 08<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$ 14.500</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Fullmetal Alchemist Kanzenban Tomo 08<i class="material-icons right">close</i></span>
-            <p>Octavo tomo del famoso manga Fullmetal Alchemist, cuesta la historia de los hermanos elric y las travesias que recorreran...</p>
-          </div>
-        </div>
-            
-        <div class="col 1"></div>
-            
-        <div class="card white left hoverable" style="height: 330px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_12.jpg" style="height: 200px; width: 200px;" alt="fultt12">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Fullmetal Alchemist 12<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$ 14.500</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Fullmetal Alchemist Kanzenban Tomo 12<i class="material-icons right">close</i></span>
-            <p>Doceavo tomo del famoso manga Fullmetal Alchemist, cuesta la historia de los hermanos elric y las travesias que recorreran...</p>
-          </div>
-        </div>
+         {% endfor %}
         
-        <div class="col 1"></div>
-            
-        <div class="card white left hoverable" style="height: 330px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_17.jpg" style="height: 200px; width: 200px;" alt="full17">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Fullmetal Alchemist 17<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$ 14.500</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Fullmetal Alchemist Kanzenban Tomo 17<i class="material-icons right">close</i></span>
-            <p>Diecisieteavo tomo del famoso manga Fullmetal Alchemist, cuesta la historia de los hermanos elric y las travesias que recorreran...</p>
-          </div>
         </div>
-        <div class="col 1"></div>
-          <div class="card white left hoverable" style="height: 330px; width: 200px;">
-            <div class="card-image">
-              <img class="materialboxed" src="imagenes/mangas/Fullmetal/fullmetal_kanzenban_18.jpg" style="height: 200px; width: 200px;" alt="full18">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Fullmetal Alchemist 18<i class="material-icons right">more_vert</i></span>
-              <p><a href="#">$ 14.500</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Fullmetal Alchemist Kanzenban Tomo 18<i class="material-icons right">close</i></span>
-              <p>Ultimo tomo recopilatorio en donde llega al preciado final de los hermanos y ¿cual sera su lucha final?...</p>
-            </div>
-          </div>
-      </div>
-    </div> 
-            <!--TODO:Kimetsu -->
-    <div class="Kimetsu No Yaiba">
-      <div class="row">
-        <div class="col s1"></div>
-        <h3>Kimetsu No Yaiba</h3>
         <br>
-        <div class="col s1"></div>
-        <div class="card white left hoverable" style="height: 330px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="imagenes/mangas/kimetsu/Kimetsu-04.jpg" style="height: 200px; width: 200px;" alt="kime04">
+        <div class="row">
+          <div class="col s1"></div>
+          <h1>Kimetsu No Yaiba</h1>
+          <br>
+          <div class="col s1"></div>
+           {% for manga in mangas %}
+            {% if manga.tipo == "Kimetsu No Yaiba"  %}
+           <div class="card white left hoverable" style="height: 320px; width: 200px;">
+             <div class="card-image">
+               <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
+             </div>
+             <div class="card-content">
+               <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
+               <p><a href="#">${{manga.precio}}</a></p>
+             </div>
+             <div class="card-reveal">
+               <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
+               <p>{{manga.descripcion}}</p>
+               
+             </div>
+           </div>  
+           <div class="col 1"></div>
+           
+          {% endif %}  
+          
+           {% endfor %}
+          
           </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Kimetsu No Yaiba 04<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$ 9.000</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Kimetsu No Yaiba 04<i class="material-icons right">close</i></span>
-            <p>Tanjiro descubre un día que su familia ha sido asesinada por un demonio. Para empeorar las cosas, su hermana menor Nezuko, la única superviviente de la masacre, ha sufrido una transformación en demonio..</p>
-          </div>
-        </div>
-                  
-        <div class="col 1"></div>
-            
-        <div class="card white left hoverable" style="height: 330px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="imagenes/mangas/kimetsu/kimets-08.jpg" style="height: 200px; width: 200px;" alt="kime08">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Kimetsu No Yaiba 08<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">$ 9.000</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Kimetsu No Yaiba 08<i class="material-icons right">close</i></span>
-            <p>Tanjiro descubre un día que su familia ha sido asesinada por un demonio. Para empeorar las cosas, su hermana menor Nezuko, la única superviviente de la masacre, ha sufrido una transformación en demonio...</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        
+    
     <br>
     <br>   
 {% endblock %}
