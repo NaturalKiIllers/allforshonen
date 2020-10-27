@@ -11,7 +11,6 @@ urlpatterns = [
     path('figuras', views.figuras, name='figuras'),
     path('contacto', views.contacto, name='contacto'),
     path('login', views.login, name='login'),
-    path('administrador', views.admininstrador, name='administrador')
-    
-
+    path('agregar_contacto', views.agregar_contacto, name='agregar_contacto'),
+    path('administrador', views.administrador, name='administrador'),
 ]
