@@ -4,10 +4,7 @@ from django.urls import path, include
 from .models import Figura
 from .models import Manga
 from .models import Artbook
-<<<<<<< HEAD
 from .models import Contacto
-=======
->>>>>>> 7ae4202dcac9897db7f5ebc1c9cd48b82b08a609
 from . import views
 
 # Create your views here.

@@ -12,6 +12,4 @@ urlpatterns = [
     path('contacto', views.contacto, name='contacto'),
     path('agregar_contacto', views.agregar_contacto, name='agregar_contacto'),
     path('administrador', views.administrador, name='administrador'),
-    
-
 ]
