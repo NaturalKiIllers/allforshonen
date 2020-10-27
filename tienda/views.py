@@ -40,3 +40,12 @@ def contacto(request):
     context={}
     return render(request, 'tienda/contacto.html', context)
 
+def admin(request):
+    print("Hola estamos en la ventana del admin")
+    context={}
+    return render(request, 'tienda/admin.html', context)
+
+def login(request):
+    print("Hola estamos en la ventana de login")
+    context={}
+    return render(request, 'tienda/login.html', context)
