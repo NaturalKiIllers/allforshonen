@@ -86,18 +86,19 @@
         
        <!--TODO:productos Norma-->
        <!--TODO:Fullmetal-->
+       
        <div class="row">
         <h1>Productos Norma España</h1>
       </div>
-      <div class="row">
+      <div class="row ">
         <div class="col s1"></div>
         <h1>Fullmetal Alchimist Brotherhood</h1>
         <br>
         <div class="col s1"></div>
          {% for manga in mangas %}
           {% if manga.tipo == "Fullmetal Alchemist"  %}
-         <div class="card white left hoverable" style="height: 320px; width: 200px;">
-           <div class="card-image">
+         <div class="card white left hoverable"  style="height: 320px; width: 200px;">
+           <div class="card-image ">
              <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
            </div>
            <div class="card-content">
@@ -116,8 +117,10 @@
          {% endfor %}
         
         </div>
+        
         <br>
-        <div class="row">
+        
+        <div class="row ">
           <div class="col s1"></div>
           <h1>Kimetsu No Yaiba</h1>
           <br>
@@ -126,7 +129,7 @@
             {% if manga.tipo == "Kimetsu No Yaiba"  %}
            <div class="card white left hoverable" style="height: 320px; width: 200px;">
              <div class="card-image">
-               <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
+               <img class="materialboxed " src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
              </div>
              <div class="card-content">
                <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
