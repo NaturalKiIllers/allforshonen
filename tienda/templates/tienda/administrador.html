@@ -1,0 +1,136 @@
+
+{% extends "tienda/base.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+    {% block content%}
+
+
+
+    <div class="row">
+        
+        <ul class="tabs tabs-fixed-width tab-demo z-depth-1" >
+            <li class="tab col s3"><a onclick="ActivarCampoOtroTema()"href="#producto">Productos</a></li>
+            <li class="tab col s3"><a  href="#usuario">Usuarios</a></li>
+        </ul>
+        <div id="producto" style="display:none;" >
+           <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+                <li class="tab col s3"><a onclick="mangas()" href="#manga">Mangas</a></li>
+                <li class="tab col s3"><a href="#figura">Figura</a></li>
+                <li class="tab col s3"><a href="#art">Artkbooks</a></li>
+            </ul>
+            
+                <div id="manga" style="display:none;"  >
+                    <ul class="tabs tabs-fixed-width tab-demo z-depth-1" >
+                        <li class="tab col s3"><a href="#agregar" onclick="mangasOP()">Agregar</a></li>
+                        <li class="tab col s3"><a href="#eliminar">Eliminar</a></li>
+                        <li class="tab col s3"><a href="#buscar">Buscar</a></li>
+                        <li class="tab col s3"><a href="#listar">Listar</a></li>
+                    </ul>
+                  
+                    <div id="manga_op" >
+                        <div id="agregar">
+                            <h1>agregar</h1>
+                        </div>
+                        <div id="eliminar">
+                            <h1>eliminar</h1>
+                        </div>
+                        <div id="buscar">
+                            <h1>buscar</h1>
+                        </div>
+                        <div id="listar">
+                            <h1>listar</h1>
+                        </div>
+                    </div>
+                </div> 
+         
+               
+                <div id="figura" style="display:none;">
+                    <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+                        <li class="tab col s3"><a href="#agregarf">Agregar</a></li>
+                        <li class="tab col s3"><a href="#eliminarf">Eliminar</a></li>
+                        <li class="tab col s3"><a href="#buscarf">Buscar</a></li>
+                        <li class="tab col s3"><a href="#listarf">Listar</a></li>
+                    </ul>
+                    <div id="actopcion" style="display:none;">
+                        
+                    <div id="agregarf">
+                        <h1>agregarf</h1>
+                    </div>
+                    <div id="eliminarf">
+                        <h1>eliminarf</h1>
+                    </div>
+                    <div id="buscarf">
+                        <h1>buscarf</h1>
+                    </div>
+                    <div id="listarf">
+                        <h1>listarf</h1>
+                    </div>
+                </div>
+            </div> 
+
+                <div id="art" style="display:none;">
+                    <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+                        <li class="tab col s3"><a href="#agregara">Agregar</a></li>
+                        <li class="tab col s3"><a href="#eliminara">Eliminar</a></li>
+                        <li class="tab col s3"><a href="#buscara">Buscar</a></li>
+                        <li class="tab col s3"><a href="#listara">Listar</a></li>
+                    </ul>
+                    <div id="actopcion" style="display:none;">
+                    <div id="agregara">
+                        <h1>agregara</h1>
+                    </div>
+                    <div id="eliminara">
+                        <h1>eliminara</h1>
+                    </div>
+                    <div id="buscara">
+                        <h1>buscara</h1>
+                    </div>
+                    <div id="listara">
+                        <h1>listar</h1>
+                    </div>
+                </div>
+            </div> 
+            
+            
+       
+   
+
+
+        <div id="usuario"  >
+            
+              <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+                <li class="tab col s3"><a href="#test8">Agregar</a></li>
+                <li class="tab col s3"><a href="#test8">Eliminar</a></li>
+                <li class="tab col s3"><a href="#test8">Buscar</a></li>
+                <li class="tab col s3"><a href="#test9">Listar</a></li>
+              </ul>
+            
+        </div>
+  </div>
+        
+{% endblock %}
+
+{% block javascript%}
+<script>
+    var instance = M.Tabs.init(el);
+</script>
+
+<script type="text/javascript">	
+    function ActivarCampoOtroTema()
+        {var contenedor = document.getElementById("producto");		
+        contenedor.style.display = "block";		return true;	}
+</script>
+<script type="text/javascript">	
+    function mangas()
+        {var contenedor = document.getElementById("manga");		
+        contenedor.style.display = "block";		return true;	}
+</script>
+<script type="text/javascript">	
+    function mangasOp()
+        {var contenedor = document.getElementById("manga_op");		
+        contenedor.style.display = "block";		return true;	}
+</script>
+
+
+
+{% endblock%}
