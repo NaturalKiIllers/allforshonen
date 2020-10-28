@@ -64,3 +64,11 @@ h3,h5{
 }
 
 
+#left-sidebar-nav {
+   
+    width: 10%;
+    left: 20%;
+    float: left;
+    border: none;
+   
+  }

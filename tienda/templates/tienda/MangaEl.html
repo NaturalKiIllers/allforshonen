@@ -1,0 +1,26 @@
+{% extends "tienda/baseAd.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+    {% block content%}
+    <form method="POST" >
+        <div class="container white" > 
+            <div class="row">
+                <div class="input-field col l6 ">
+                    <input type="text" name="codigoM" id="codigoM"   >
+                    <label for="codigoM"> Indique el código de manga para eliminar</label>
+                </div>
+                <div class="input-field col l6 ">
+                    <button type="submit" class="btn red waves-effect" >
+                        <i class="material-icons right">delete</i>
+                        Eliminar
+                    </button>
+    
+                </div>
+    
+                <div class="clearfix"></div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+            </div> 
+        </div> 
+    </form>
+    {% endblock %}

@@ -1,0 +1,26 @@
+{% extends "tienda/baseAd.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+    {% block content%}
+    <form method="POST" action="eliminar_figura" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="container white" > 
+            <div class="row">
+                <div class="input-field col l6 ">
+                    <input type="text" name="codigof" id="codigof"   >
+                    <label for="codigof"> Indique el código de figura para eliminar</label>
+                </div>
+                <div class="input-field col l6 ">
+                    <button type="submit" class="btn red waves-effect" >
+                        <i class="material-icons right">delete</i>
+                        Eliminar
+                    </button>
+    
+                </div>
+    
+               
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+            </div> 
+        </form>
+    {% endblock %}

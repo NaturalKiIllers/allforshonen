@@ -15,6 +15,7 @@ class Figura(models.Model):
 
 class Manga(models.Model):
     id_manga         = models.AutoField(db_column='id_manga', primary_key=True)
+    codigoM         = models.CharField(max_length=10, unique=True,null=True)
     nombre           = models.CharField(max_length=30, blank=True, null=True)
     editorial        = models.CharField(max_length=20, blank=True, null=True)
     tipo             = models.CharField(max_length=20, blank=True, null=True)
@@ -25,6 +26,7 @@ class Manga(models.Model):
 
 class Artbook(models.Model):
     id_artbook       = models.AutoField(db_column='id_artbook', primary_key=True)
+    codigoA         = models.CharField(max_length=10, unique=True,null=True)
     nombre           = models.CharField(max_length=30, blank=True, null=True)
     precio           = models.IntegerField(blank=True, null=True)
     nombre_desc      = models.CharField(max_length=50, blank=True, null=True)

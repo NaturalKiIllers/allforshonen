@@ -1,0 +1,45 @@
+{% extends "tienda/baseAd.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+    {% block content%}
+   <div class="container">
+    <table id="tablas">
+      <thead class="responsive-table">
+        <tr>
+          <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Editorial</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+            <th>Descripción</th>
+            <th>Imagen</th>
+            
+
+        </tr>
+      </thead>
+  {% for manga in mangas %}
+      <tbody>
+        <tr>
+          <td>{{manga.codigoM}}</td> 
+          <td>{{manga.nombre}}</td> 
+          <td>{{manga.editorial}}</td>
+          <td>{{manga.tipo}}</td>
+          <td>${{manga.precio}}</td>
+          <td>{{manga.nombre_desc}}</td>
+          <td><img src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;"></td>
+        </tr>
+     
+      </tbody>    {% endfor %}
+ 
+    </table> 
+
+</div>
+
+
+
+    
+    
+    
+    
+    
+    {% endblock %}
