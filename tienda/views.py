@@ -142,9 +142,12 @@ def MangaEl(request):
     return render(request, 'tienda/MangaEl.html', context)
 
 def MangaBu(request):
+    
     print("Hola estamos en la ventana index")
     context={}
     return render(request, 'tienda/MangaBu.html', context)
+
+   
 
 def MangaL(request):
     print("Hola estamos en la ventana admin")
@@ -200,11 +203,163 @@ def ArtL(request):
 
 
 
+def FiguraEn(request):
+   
+    if request.method == 'POST':
+        var_codigo = request.POST['codigof']
+        if var_codigo != "":
+           try:
+                figura = Figura()
+                figura= Figura.objects.get(codigof=var_codigo)
+                if figura is not None:
+                   context={'figura':figura}
+                   return render(request, 'tienda/FiguraEn.html', context)
+                else:
+                   return render(request, 'personas/mensaje_alumno_elminado.html',{})
+           except Figura.DoesNotExist:
+               return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+        else:
+           return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+    else:
+        return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
 
+def editar_figura(request):
+    print("hola  estoy en agregar_figura...")
+    if request.method == 'POST':
+        var_codigo = request.POST['codigoF']
+        var_nombre = request.POST['nombre']
+        var_anime = request.POST['anime']
+        var_descripcion = request.POST['descripcion']
+        var_precio = request.POST['precio']
+        var_altura = request.POST['altura']
+        var_material = request.POST['material']
+        var_tipo= request.POST['tipo']
+        var_foto= request.FILES['foto']
+        if var_codigo != "":
+            try:
+               figura = Figura()
+               figura.codigof     = var_codigo
+               figura.nombre     = var_nombre 
+               figura.anime      = var_anime 
+               figura.descripcion= var_descripcion
+               figura.precio     = var_precio
+               figura.altura     = var_altura 
+               figura.material   = var_material
+               figura.tipo       = var_tipo
+               figura.foto       = var_foto
+               figura.save()
+               return render( request,'tienda/administrador.html',{})
 
+            except figura.DoesNotExist:
+               return render(request, 'personas/error/error_204.html', {})
+        else:
+           return render(request, 'personas/error/error_201.html', {})
+    else:
+        return render(request, 'personas/error/error_203.html', {})
 
+def eliminar_manga(request):
+    print("hola  estoy en eliminar_figura")
+    if request.method == 'POST':
+        var_codigo = request.POST['codigoM']
+        if var_codigo != "":
+           try:
+               manga = Manga()
+               manga= Manga.objects.get(codigoM=var_codigo)
+               if manga is not None:
+                   print("manga=", manga)
+                   manga.delete()
+                   return render(request, 'tienda/administrador.html', )
+               else:
+                   return render(request, 'personas/error/error_202.html',{})
+           except manga.DoesNotExist:
+               return render(request, 'personas/error/error_202.html', {})
+        else:
+           return render(request, 'personas/error/error_201.html', {})
+    else:
+        return render(request, 'personas/error/error_203.html', {})
 
+def editar_manga(request):
+    print("hola  estoy en agregar_figura...")
+    if request.method == 'POST':
+        var_codigo = request.POST['codigoM']
+        var_nombre = request.POST['nombre']
+        var_editorial = request.POST['editorial']
+        var_tipo= request.POST['tipo']    
+        var_precio = request.POST['precio']
+        var_nombre_desc = request.POST['nombre_desc']
+        var_descripcion = request.POST['descripcion']
+        var_fotoManga= request.FILES['fotoM']
+        if var_codigo != "":
+            try:
+               manga = Manga()
+               manga.codigoM          = var_codigo
+               manga.nombre           = var_nombre 
+               manga.editorial        = var_editorial
+               manga.tipo             = var_tipo
+               manga.precio           = var_precio
+               manga.nombre_desc      = var_nombre_desc 
+               manga.descripcion      = var_descripcion
+               manga.fotoManga        = var_fotoManga
+               manga.save()
+               return render( request,'tienda/administrador.html',{})
 
+            except manga.DoesNotExist:
+               return render(request, 'personas/error/error_204.html', {})
+        else:
+           return render(request, 'personas/error/error_201.html', {})
+    else:
+        return render(request, 'personas/error/error_203.html', {})
+
+def agregar_manga(request):
+    print("hola  estoy en agregar_figura...")
+    if request.method == 'POST':
+        var_codigo = request.POST['codigoM']
+        var_nombre = request.POST['nombre']
+        var_editorial = request.POST['editorial']
+        var_tipo= request.POST['tipo']    
+        var_precio = request.POST['precio']
+        var_nombre_desc = request.POST['nombre_desc']
+        var_descripcion = request.POST['descripcion']
+        var_fotoManga= request.FILES['fotoM']
+        if var_codigo != "":
+            try:
+               manga = Manga()
+               manga.codigoM          = var_codigo
+               manga.nombre           = var_nombre 
+               manga.editorial        = var_editorial
+               manga.tipo             = var_tipo
+               manga.precio           = var_precio
+               manga.nombre_desc      = var_nombre_desc 
+               manga.descripcion      = var_descripcion
+               manga.fotoManga        = var_fotoManga
+               manga.save()
+               return render( request,'tienda/administrador.html',{})
+
+            except manga.DoesNotExist:
+               return render(request, 'personas/error/error_204.html', {})
+        else:
+           return render(request, 'personas/error/error_201.html', {})
+    else:
+        return render(request, 'personas/error/error_203.html', {})
+
+def MangaEn(request):
+    if request.method == 'POST':
+            var_codigo = request.POST['codigoM']
+            if var_codigo != "":
+                try:
+                    manga = Manga()
+                    manga= Manga.objects.get(codigoM=var_codigo)
+                    if manga is not None:
+                        context={'manga':manga}
+                        return render(request, 'tienda/MangaEn.html', context)
+                    else:
+                        return render(request, 'personas/mensaje_alumno_elminado.html',{})
+                except Manga.DoesNotExist:
+                    return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+            else:
+                return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+    else:
+        return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
 
 
     

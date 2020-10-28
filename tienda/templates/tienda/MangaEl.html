@@ -2,7 +2,8 @@
 
 {%block title %} All for Shonen{% endblock%}
     {% block content%}
-    <form method="POST" >
+    <form method="POST" action="eliminar_manga" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="container white" > 
             <div class="row">
                 <div class="input-field col l6 ">
@@ -18,7 +19,7 @@
                 </div>
     
                 <div class="clearfix"></div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                
     
             </div> 
         </div> 

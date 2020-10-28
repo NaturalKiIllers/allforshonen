@@ -5,7 +5,8 @@
 
     
 
-    <form method="POST" >
+    <form method="POST"  action="agregar_manga" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="container white " > 
             <div class="row"> 			
                 <div class="input-field col l6 ">
@@ -49,7 +50,7 @@
                 
                 <br>
                 <div class="input-field col l12 m12">
-                    <input type="file" name="fotof" id="fotof">
+                    <input type="file" name="fotoM" id="fotoM">
                 </div>
                 <div class="clearfix"></div>
                 <button type="submit" class="btn red waves-effect" >

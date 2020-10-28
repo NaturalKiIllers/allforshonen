@@ -3,9 +3,10 @@
 {%block title %} All for Shonen{% endblock%}
     {% block content%}
 
-    <br><br><br><br>
+    <br><br>
 
-    <form method="POST" >
+    <form method="POST" action="MangaEn" >
+        {% csrf_token %}
         <div class="container white" > 
             <div class="row"> 			
                 <div class="input-field col l6 ">
@@ -19,84 +20,14 @@
                     </button>
                 </div>
                
-                <div class="input-field col l6 ">
-                    <input type="text"  name="codigoM " id="codigoM " value="{{manga.codigoM}}" >
-                    <label for="direccion">Código de Manga</label>
-                </div>
-                <div class="input-field col l6 ">
-                    <input type="text" name="nombre" id="nombre" value="{{manga.nombre}}" >
-                    <label for="nombre">Nombre</label>
-                </div>
                
-                <div class="input-field col l6 m6">
-                    <select name="tipo" id="tipo" value="{{manga.tipo}}">
-                        <option selected disabled>Seleccione el tipo de Manga</option>
-                        {% if manga.tipo == "Slam Dunk" %}
-                            <option value="Slam Dunk" selected>Slam Dunk</option>
-                        {% else %}
-                            <option value="Slam Dunk">Slam Dunk</option>
-                        {% endif %}
-                        {% if manga.tipo == "Fullmetal Alquimist" %}
-                            <option value="Fullmetal Alquimist" selected>Fullmetal Alquimist</option>
-                        {% else %}
-                            <option value="Fullmetal Alquimist">Fullmetal Alquimist</option>
-                        {% endif %}   
-                        {% if manga.tipo == "Dr.Stone" %}
-                            <option value="Dr.Stone" selected>Dr.Stone</option>
-                        {% else %}
-                            <option value="Dr.Stone">Dr.Stone</option>
-                        {% endif %}   
-                        {% if manga.tipo == "Kimetsu No Yaiba" %}
-                            <option value="Kimetsu No Yaiba" selected>Kimetsu No Yaiba</option>
-                        {% else %}
-                            <option value="Kimetsu No Yaiba">Kimetsu No Yaiba</option>
-                        {% endif %}   
-                    </select> 
-                </div>
-                <div class="input-field col l6 ">
-                    <input type="text" name="precio" id="precio" value="{{manga.precio}}" >
-                    <label for="precio">Precio</label>
-                </div>
-              
-                <div class="input-field col l6">
-                    <input type="text" name="nombre_desc" id="nombre_desc" value="{{manga.nombre_desc}}" >
-                    <label for="nombredesc">Nombre del Título para la descripcion</label> 
-                </div>
-                <div class="input-field col l6">
-                    <input type="text" name="descripcion" id="descripcion" value="{{manga.descripcion}}">
-                    <label for="descripcion">Descripción</label>   
-                </div>
-                <div class="clearfix"></div>
-                <br>
-                <div class="input-field col l6 ">
-                    <input type="file" name="fotoManga" id="fotoManga">
-                    {% if manga.fotoManga %}
-                    <p>{{manga.fotoManga.url }}</p>
-                   <p><img src="{{manga.fotoManga.url}}"></p>
-                 {% endif %}
-                </div>
-                <div class="input-field col l6">
-                    <input type="hidden" name="id_manga" id="id_manga" value="{{manga.id_manga}}">
-                     
-                </div>
-    
-                <div class="clearfix"></div>
-                    <br>
-                <button type="submit" class="btn red waves-effect" >
-                    <i class="material-icons right">check</i>
-                    Modificar
-                </button>
-             
-            </div> 
-               
-                
+            </div>  
            
         </div>  
     </form>
     
     
-    </form>
-        
+   
 {% endblock %}
 
 {% block javascript%}
