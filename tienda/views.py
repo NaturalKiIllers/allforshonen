@@ -216,7 +216,7 @@ def FiguraEn(request):
                    return render(request, 'tienda/FiguraEn.html', context)
                 else:
                    return render(request, 'personas/mensaje_alumno_elminado.html',{})
-           except Figura.DoesNotExist:
+           except figura.DoesNotExist:
                return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
         else:
            return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
@@ -354,7 +354,7 @@ def MangaEn(request):
                         return render(request, 'tienda/MangaEn.html', context)
                     else:
                         return render(request, 'personas/mensaje_alumno_elminado.html',{})
-                except Manga.DoesNotExist:
+                except manga.DoesNotExist:
                     return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
             else:
                 return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
@@ -362,4 +362,69 @@ def MangaEn(request):
         return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
 
 
-    
+def agregar_art(request):
+    print("hola  estoy en agregar_figura...")
+    if request.method == 'POST':
+        var_codigo = request.POST['codigoA']
+        var_nombre = request.POST['nombre']
+        var_precio = request.POST['precio']
+        var_nombre_desc = request.POST['nombre_desc']
+        var_descripcion = request.POST['descripcion']
+        var_fotoArtbook     = request.FILES['fotoArtbook']
+        if var_codigo != "":
+            try:
+               artbook = Artbook()
+               artbook.codigoA         = var_codigo
+               artbook.nombre           = var_nombre 
+               artbook.precio           = var_precio
+               artbook.nombre_desc      = var_nombre_desc 
+               artbook.descripcion      = var_descripcion
+               artbook.fotoArtbook      = var_fotoArtbook
+               artbook.save()
+               return render( request,'tienda/administrador.html',{})
+
+            except artbook.DoesNotExist:
+               return render(request, 'personas/error/error_204.html', {})
+        else:
+           return render(request, 'personas/error/error_201.html', {})
+    else:
+        return render(request, 'personas/error/error_203.html', {})
+
+def ArtEn(request):
+    if request.method == 'POST':
+            var_codigo = request.POST['codigoA']
+            if var_codigo != "":
+                try:
+                    artbook = Artbook()
+                    artbook= Artbook.objects.get(codigoA=var_codigo)
+                    if artbook is not None:
+                        context={'artbook':artbook}
+                        return render(request, 'tienda/ArtEn.html', context)
+                    else:
+                        return render(request, 'personas/mensaje_alumno_elminado.html',{})
+                except artbook.DoesNotExist:
+                    return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+            else:
+                return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+    else:
+        return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+def eliminar_art(request):
+    if request.method == 'POST':
+            var_codigo = request.POST['codigoA']
+            if var_codigo != "":
+                try:
+                    artbook = Artbook()
+                    artbook= Artbook.objects.get(codigoA=var_codigo)
+                    if artbook is not None:
+                        print("artbook =", artbook)
+                        artbook.delete()
+                        return render(request, 'tienda/administrador.html', {})
+                    else:
+                        return render(request, 'personas/mensaje_alumno_elminado.html',{})
+                except artbook.DoesNotExist:
+                    return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+            else:
+                return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+    else:
+        return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+

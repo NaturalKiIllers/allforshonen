@@ -37,7 +37,9 @@ urlpatterns = [
     path('ArtEl', views.ArtEl, name='ArtEl'),
     path('ArtBu', views.ArtBu, name='ArtBu'),
     path('ArtL', views.ArtL, name='ArtL'),
-    
+    path('agregar_art', views.agregar_art, name='agregar_art'),
+    path('ArtEn', views.ArtEn, name='ArtEn'),
+    path('eliminar_art', views.eliminar_art, name='eliminar_art'),
     
   
 ]

@@ -5,7 +5,8 @@
 
     <br><br><br><br>
 
-    <form method="POST" >
+    <form method="POST"action="agregar_art" enctype="multipart/form-data" >
+        {% csrf_token %}
         <div class="container white" > 
             <div class="row">
                 <div class="input-field col l6 ">
@@ -16,7 +17,7 @@
                     <input type="text" name="nombre" id="nombre" >
                     <label for="nombre">Nombre</label>
                 </div>
-                <div class="clearfix"></div>
+                
                 <div class="input-field col l6 ">
                     <input type="text" name="precio" id="precio" >
                     <label for="precio">Precio</label>
@@ -25,13 +26,13 @@
                     <input type="text" name="nombre_desc" id="nombre_desc" >
                     <label for="nombredesc">Nombre del Título para la descripcion</label>
                 </div>
-                <div class="clearfix"></div>
+               
                 <div class="input-field col l6">
                     <input type="text" name="descripcion" id="descripcion" >
                     <label for="material">Descripción</label>
                 </div>
     
-                <div class="clearfix"></div>
+               
                 <br>
                 <div class="input-field col l12 m12">
                     <input type="file" name="fotoArtbook" id="fotoArtbook">
