@@ -4,11 +4,12 @@
     {% block content%}
 
     <br><br><br><br>
-    <form method="POST" >
+    <form method="POST" action="ArtEn" >
+        {% csrf_token %}
         <div class="container white" > 
             <div class="row"> 			
                 <div class="input-field col l6 ">
-                    <input type="text" name="codigoarA" id="codigoA"   >
+                    <input type="text" name="codigoA" id="codigoA"   >
                     <label for="codigoM"> Indique el código de Artbook para buscar</label>
                 </div>
                 <div class="input-field col l6 ">
@@ -17,50 +18,8 @@
                         Buscar
                     </button>
                 </div>
-                <div class="clearfix"></div>
-                <div class="input-field col l6 ">
-                    <input type="text"  name="codigoA " id="codigoA " value="{{artbook.codigoA}}" >
-                    <label for="direccion">Código de Manga</label>
-                </div>
-                <div class="input-field col l6 ">
-                    <input type="text" name="nombre" id="nombre" value="{{artbook.nombre}}" >
-                    <label for="nombre">Nombre</label>
-                </div>
                 
-                <div class="input-field col l6 ">
-                    <input type="text" name="precio" id="precio" value="{{artbook.precio}}" >
-                    <label for="precio">Precio</label>
-                </div>
-                <div class="input-field col l6 ">
-                    <input type="text" name="nombre_desc" id="nombre_desc" value="{{artbook.nombre_desc}}" >
-                    <label for="precio">Nombre del Título para la descripcion</label>
-                </div>
-                <div class="clearfix"></div>
-                <div class="input-field col l6">
-                    <input type="text" name="descripcion " id="descripcion " value="{{artbook.descripcion }}" >
-                    <label for="nombredesc">Descripción </label> 
-                </div>
-                <br>
-                <div class="input-field col l6 ">
-                    <input type="file" name="fotoArtbook" id="fotoArtbook">
-                    {% if artbook.fotoArtbook %}
-                    <p>{{artbook.fotoArtbook.url }}</p>
-                   <p><img src="{{artbook.fotoArtbook.url}}"></p>
-                 {% endif %}
-                </div>
-                <div class="input-field col l6">
-                    <input type="hidden" name="id_manga" id="id_manga" value="{{artbook.id_art}}">
-                     
-                </div>
-    
-                <div class="clearfix"></div>
-                    <br>
-                <button type="submit" class="btn red waves-effect" >
-                    <i class="material-icons right">check</i>
-                    Modificar
-                </button>
-             
-            </div> 
+                
                
                 
             </div> 

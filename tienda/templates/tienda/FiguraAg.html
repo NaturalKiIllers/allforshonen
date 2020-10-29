@@ -3,8 +3,7 @@
 {%block title %} All for Shonen{% endblock%}
     {% block content%}
 
-    <br><br><br><br>
-
+    <br><br>
     <form method="POST"  action="agregar_figura" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container white" > 
@@ -17,7 +16,7 @@
                     <input type="text" name="nombre" id="nombre" >
                     <label for="nombre">Nombre</label>
                 </div>
-                <div class="clearfix"></div>
+                
                 <div class="input-field col l6 ">
                     <input type="text" name="anime" id="anime" >
                     <label for="anime">Anime</label>
@@ -26,7 +25,7 @@
                     <input type="text" name="descripcion" id="descripcion" >
                     <label for="desc">Descripción</label>
                 </div>
-                <div class="clearfix"></div>
+                
                 <div class="input-field col l6 m6">
                     <input type="text" name="precio" id="precio" >
                     <label for="precio">Precio</label>
@@ -36,7 +35,7 @@
                     <label for="altura">Altura</label>
                 </div>
                 
-                <div class="clearfix"></div>
+                
                 <div class="input-field col l6">
                     <input type="text" name="material" id="material" >
                     <label for="material">Material</label>
@@ -49,7 +48,7 @@
                         <option value="3">Estatua</option>
                     </select>
                 </div>
-                <div class="clearfix"></div>
+                
                 <br>
                 <div class="input-field col l12 m12">
                     <input type="file" name="foto" id="foto">

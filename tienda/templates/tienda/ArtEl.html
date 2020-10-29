@@ -2,7 +2,8 @@
 
 {%block title %} All for Shonen{% endblock%}
     {% block content%}
-    <<form method="POST" >
+   <form method="POST" action="eliminar_art">
+        {% csrf_token %}
         <div class="container white" > 
             <div class="row">
                 <div class="input-field col l6 ">
