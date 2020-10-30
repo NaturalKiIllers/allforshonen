@@ -42,4 +42,5 @@ urlpatterns = [
     path('eliminar_art', views.eliminar_art, name='eliminar_art'),
     
   
+
 ]

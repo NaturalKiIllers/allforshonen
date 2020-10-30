@@ -41,10 +41,10 @@ def contacto(request):
     context={}
     return render(request, 'tienda/contacto.html', context)
     
-def login(request):
+def login(redirect):
     print("Hola estamos en la ventana de login")
     context={}
-    return render(request, 'tienda/login.html', context)
+    return redirect(request, 'accounts/login.html', context)
 
 def agregar_figura(request):
     print("hola  estoy en agregar_figura...")
@@ -71,14 +71,14 @@ def agregar_figura(request):
                figura.tipo       = var_tipo
                figura.foto       = var_foto
                figura.save()
-               return render( request,'tienda/administrador.html',{})
+               return render( request,'respuesta_crud/productos/agregado_corr.html',{})
 
             except figura.DoesNotExist:
-               return render(request, 'personas/error/error_204.html', {})
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
-           return render(request, 'personas/error/error_201.html', {})
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/error_203.html', {})
+        return render(request, 'respuesta_crud/productos/noexiste.html', {})
 
 def eliminar_figura(request):
     print("hola  estoy en eliminar_figura")
@@ -427,4 +427,5 @@ def eliminar_art(request):
                 return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
     else:
         return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+
 
