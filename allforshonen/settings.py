@@ -26,7 +26,8 @@ SECRET_KEY = 'l5h82su-jqot5x(n_jr_l88s8zbv&b!4^$%7c_gumybs4em+)d'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL = '/tienda/index'
+LOGOUT_REDIRECT_URL = '/tienda/index'
 
 # Application definition
 

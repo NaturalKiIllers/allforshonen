@@ -4,6 +4,7 @@
     {% load static %}
    
     <title>{% block title%} {% endblock %}</title>
+    <link rel="icon" href="{% static 'imagenes/Index/luffy2.ico' %}"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>        
@@ -47,6 +48,15 @@
             <ul id="dropdown-menu2" class="dropdown-content">
               <li><a href="registrarse">Registrarse</a></li>
               <li class="divider"></li>
+              {% if user.is_authenticated%}
+                <li><a href="{% url 'logout'%}" >Cerrar Sesión</a></li>
+              {% else  %}
+              <li><a href="{% url 'login'%}" >Iniciar Sesión</a></li>
+              {% endif %}
+              <li class="divider"></li>
+              {% if user.is_authenticated %}
+                <li><a href="#">{{user.username}}</a></li>
+              {% endif%}
             </ul>
           </div>
         </div>
