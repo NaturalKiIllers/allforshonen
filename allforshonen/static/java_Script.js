@@ -146,9 +146,7 @@ function cadenanumero(){
      
   }
 }
-
-
-
+//Productos
 
 
 

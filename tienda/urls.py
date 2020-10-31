@@ -26,6 +26,7 @@ urlpatterns = [
     path('editar_manga', views.editar_manga, name='editar_manga'),
     
     path('editar_figura', views.editar_figura, name='editar_figura'),
+    path('editar_manga', views.editar_manga, name='editar_manga'),
 
     path('FiguraAg', views.FiguraAg, name='FiguraAg'),
     path('FiguraEl', views.FiguraEl, name='FiguraEl'),

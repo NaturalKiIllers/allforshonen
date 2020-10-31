@@ -1,7 +1,8 @@
-{% extends "tienda/baseAd.html" %}
+{% extends "administrador/baseAd.html" %}
 
 {%block title %} All for Shonen{% endblock%}
-    {% block content%}
+{% block content%}
+    <br><br>
     <form method="POST" action="eliminar_manga" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container white" > 
@@ -12,16 +13,11 @@
                 </div>
                 <div class="input-field col l6 ">
                     <button type="submit" class="btn red waves-effect" >
-                        <i class="material-icons right">delete</i>
-                        Eliminar
+                        <i class="material-icons right">delete</i> Eliminar
                     </button>
-    
                 </div>
-    
                 <div class="clearfix"></div>
-                
-    
             </div> 
         </div> 
     </form>
-    {% endblock %}
+{% endblock %}

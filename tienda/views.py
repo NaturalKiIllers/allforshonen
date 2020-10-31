@@ -116,15 +116,14 @@ def agregar_contacto(request):
         contacto.asunto      = var_asunto 
         contacto.mensaje     = var_mensaje
         contacto.save()
-        return render(request,"tienda/adAgregar.html",{})
+        return render(request,"tienda/index.html",{})
     else:
         return render(request, 'personas/error/error_203.html', {})
 
 def administrador(request):
     print("Hola estamos en la ventana admin")
-    figura= Figura.objects.all()
-    context={ 'figuras':figura }
-    return render(request, 'tienda/administrador.html', context)
+    context={ }
+    return render(request, 'administrador/administrador.html', {})
    
 def usuarios(request):
     print("Hola estamos en la ventana index")
@@ -134,72 +133,70 @@ def usuarios(request):
 def MangaAg(request):
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/MangaAg.html', context)
+    return render(request, 'administrador/crud/mangaAg.html', context)
 
 def MangaEl(request):
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/MangaEl.html', context)
+    return render(request, 'administrador/crud/mangaEl.html', context)
 
 def MangaBu(request):
     
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/MangaBu.html', context)
-
-   
+    return render(request, 'administrador/crud/mangaBu.html', context)
 
 def MangaL(request):
     print("Hola estamos en la ventana admin")
     manga= Manga.objects.all()
     context={ 'mangas':manga }
-    return render(request, 'tienda/MangaL.html', context)  
+    return render(request, 'administrador/crud/mangaL.html', context)  
 
 
 
 def FiguraAg(request):
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/FiguraAg.html', context)
+    return render(request, 'administrador/crud/figuraAg.html', context)
 
 def FiguraEl(request):
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/FiguraEl.html', context)
+    return render(request, 'administrador/crud/figuraEl.html', context)
 
 def FiguraBu(request):
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/FiguraBu.html', context)
+    return render(request, 'administrador/crud/figuraBu.html', context)
 
 def FiguraL(request):
     print("Hola estamos en la ventana admin")
     figura= Figura.objects.all()
     context={ 'figuras':figura }
-    return render(request, 'tienda/FiguraL.html', context)  
+    return render(request, 'administrador/crud/figuraL.html', context)  
 
 
 
 def ArtAg(request):
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/ArtAg.html', context)
+    return render(request, 'administrador/crud/artAg.html', context)
 
 def ArtEl(request):
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/ArtEl.html', context)
+    return render(request, 'administrador/crud/artEl.html', context)
 
 def ArtBu(request):
     print("Hola estamos en la ventana index")
     context={}
-    return render(request, 'tienda/ArtBu.html', context)
+    return render(request, 'administrador/crud/artBu.html', context)
 
 def ArtL(request):
     print("Hola estamos en la ventana admin")
     artbook= Artbook.objects.all()
     context={ 'artbooks' : artbook}
-    return render(request, 'tienda/ArtL.html', context)  
+    return render(request, 'administrador/crud/artL.html', context)  
 
 
 
@@ -213,7 +210,7 @@ def FiguraEn(request):
                 figura= Figura.objects.get(codigof=var_codigo)
                 if figura is not None:
                    context={'figura':figura}
-                   return render(request, 'tienda/FiguraEn.html', context)
+                   return render(request, 'administrador/crud/figuraEn.html', context)
                 else:
                    return render(request, 'respuesta_crud/productos/noexiste.html',{})
            except figura.DoesNotExist:
@@ -226,6 +223,7 @@ def FiguraEn(request):
 def editar_figura(request):
     print("hola  estoy en agregar_figura...")
     if request.method == 'POST':
+        var_id_figura = request.POST['id_figura']
         var_codigo = request.POST['codigoF']
         var_nombre = request.POST['nombre']
         var_anime = request.POST['anime']
@@ -238,6 +236,7 @@ def editar_figura(request):
         if var_codigo != "":
             try:
                figura = Figura()
+               figura.id_figura  = var_id_figura
                figura.codigof     = var_codigo
                figura.nombre     = var_nombre 
                figura.anime      = var_anime 
@@ -249,7 +248,6 @@ def editar_figura(request):
                figura.foto       = var_foto
                figura.save()
                return render( request,'respuesta_crud/productos/modificar.html',{})
-
             except figura.DoesNotExist:
                return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
@@ -353,9 +351,9 @@ def MangaEn(request):
                     manga= Manga.objects.get(codigoM=var_codigo)
                     if manga is not None:
                         context={'manga':manga}
-                        return render(request, 'tienda/MangaEn.html', context)
+                        return render(request, 'administrador/crud/mangaEn.html', context)
                     else:
-                        return render(request, '',{})
+                        return render(request, 'respuesta_crud/productos/noexiste.html',{})
                 except manga.DoesNotExist:
                     return render(request, 'respuesta_crud/productos/noexiste.html', {})
             else:
@@ -401,7 +399,7 @@ def ArtEn(request):
                     artbook= Artbook.objects.get(codigoA=var_codigo)
                     if artbook is not None:
                         context={'artbook':artbook}
-                        return render(request, 'tienda/ArtEn.html', context)
+                        return render(request, 'administrador/crud/artEn.html', context)
                     else:
                         return render(request, 'personas/mensaje_alumno_elminado.html',{})
                 except artbook.DoesNotExist:

@@ -1,0 +1,113 @@
+{% extends "administrador/baseAd.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+{% block content%}
+    <form method="POST"  action="agregar_figura" enctype="multipart/form-data" onsubmit="return validarFiguraAg()">
+        {% csrf_token %}
+        <div class="container white" > 
+            <div class="row"> 			
+                <div class="input-field col l6 ">
+                    <input type="text" name="codigoF" id="codigof"   >
+                    <label for="codigof"> Código Figura</label>
+                </div>
+                <div class="input-field col l6 ">
+                    <input type="text" name="nombre" id="nombre" >
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="input-field col l6 ">
+                    <input type="text" name="anime" id="anime" >
+                    <label for="anime">Anime</label>
+                </div>
+                <div class="input-field col l6 ">
+                    <input type="text" name="descripcion" id="descripcion" >
+                    <label for="desc">Descripción</label>
+                </div>
+                <div class="input-field col l6 m6">
+                    <input type="text" name="precio" id="precio" >
+                    <label for="precio">Precio</label>
+                </div>
+                <div class="input-field col l6 ">
+                    <input type="text" name="altura" id="altura" >
+                    <label for="altura">Altura</label>
+                </div>
+                <div class="input-field col l6">
+                    <input type="text" name="material" id="material" >
+                    <label for="material">Material</label>
+                </div>
+                <div class="input-field col l6">
+                    <select name="tipo" id="tipo" >
+                        <option selected disabled>Seleccione Tipo de Figura</option>
+                        <option value="Articulable">Articulable</option>
+                        <option value="Armable">Armable</option>
+                        <option value="Estatua">Estatua</option>
+                    </select>
+                </div>
+                <br>
+                <div class="input-field col l12 m12">
+                    <input type="file" name="foto" id="foto">
+                </div>
+                <div class="clearfix"></div>
+                <button type="submit" class="btn red waves-effect" >
+                    <i class="material-icons right">check</i>Agregar
+                </button>
+            </div> 
+        </div> 
+    </form>
+{% endblock %}
+{% block javascript%}
+<script>
+function validarFiguraAg(){
+ 
+ var codigo=document.getElementById("codigof");
+ var nombre=document.getElementById("nombre");
+ var anime=document.getElementById("anime");
+ var descripcion=document.getElementById("descripcion");
+ var precio=document.getElementById("precio");
+ var altura=document.getElementById("altura");
+ var material=document.getElementById("material");
+ var tipo=document.getElementById("tipo");
+ var foto=document.getElementById("foto");
+
+ //Test campo obligatorio
+ if(codigo.value == "") {
+   alert('ERROR: El campo codigo no debe ir vacío o lleno de solamente espacios en blanco');
+   codigo.focus();
+   return false;
+ }else if(nombre.value == "") {
+   alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+   nombre.focus();
+   return false;
+ }else if(anime.value == "") {
+   alert('ERROR: El campo anime no debe ir vacío o lleno de solamente espacios en blanco');
+   anime.focus();
+   return false;
+ }else if(descripcion.value == ""){
+     descripcion.focus();
+     alert('ERROR: El campo descripcion no debe ir vacío o lleno de solamente espacios en blanco');
+     return false;
+ }else if(precio.value == ""){
+     precio.focus();
+   alert('ERROR: Debe escribir un precio válido');
+   return false;
+ }else if(altura.value == ""){
+     altura.focus();
+     alert('ERROR: El campo altura no debe ir vacío o lleno de solamente espacios en blanco');
+     return false;
+ }else if(material.value == ""){
+     material.focus();
+     alert('ERROR: El campo material no debe ir vacío o lleno de solamente espacios en blanco');
+     return false;
+ }else if(tipo.selectedIndex==0){
+     alert('ERROR: El campo tipo no debe ir vacío o lleno de solamente espacios en blanco');
+     return false;
+ } else if(foto.value.length == ""){
+   alert('ERROR: El campo foto no debe ir vacío ');
+   return false;
+ }else{
+       alert("Todo Completado");
+ return true;
+ }
+}
+   </script>
+
+{% endblock%}

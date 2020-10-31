@@ -1,0 +1,25 @@
+{% extends "administrador/baseAd.html" %}
+{%block title %} All for Shonen{% endblock%}
+{% block content%}
+    <br><br>
+    <form method="POST" action="MangaEn">
+        {% csrf_token %}
+        <div class="container white" > 
+            <div class="row"> 			
+                <div class="input-field col l6 ">
+                    <input type="text" name="codigoM" id="codigoM"   >
+                    <label for="codigoM"> Indique el código de manga para buscar</label>
+                </div>
+                <div class="input-field col l6 ">
+                    <button type="submit" class="btn red waves-effect" >
+                        <i class="material-icons right">search</i>Buscar
+                    </button>
+                </div>
+            </div>  
+        </div>  
+    </form>
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock%}
