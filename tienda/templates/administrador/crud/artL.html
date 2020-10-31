@@ -1,0 +1,29 @@
+{% extends "administrador/baseAd.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+{% block content%}
+  <div class="container">
+    <table id="tablas">
+      <thead class="responsive-table">
+        <tr> 
+          <th>Codigo</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Descripción</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      {% for artbook in artbooks %}
+        <tbody>
+          <tr>
+            <td>{{artbook.codigoA}}</td> 
+            <td>{{artbook.nombre}}</td> 
+            <td>${{artbook.precio}}</td>
+            <td>{{artbook.nombre_desc}}</td>
+            <td><img src="{{artbook.fotoArtbook.url}}"   style="height: 200px; width: 200px;"></td>
+          </tr>
+        </tbody>    
+      {% endfor %}
+    </table> 
+  </div>
+{% endblock %}

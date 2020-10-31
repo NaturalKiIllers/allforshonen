@@ -1,10 +1,7 @@
-{% extends "tienda/baseAd.html" %}
-
+{% extends "administrador/baseAd.html" %}
 {%block title %} All for Shonen{% endblock%}
-    {% block content%}
-
+{% block content%}
     <br><br>
-
     <form method="POST" action="MangaEn" >
         {% csrf_token %}
         <div class="container white" > 
@@ -15,40 +12,14 @@
                 </div>
                 <div class="input-field col l6 ">
                     <button type="submit" class="btn red waves-effect" >
-                        <i class="material-icons right">search</i>
-                        Buscar
+                        <i class="material-icons right">search</i>Buscar
                     </button>
                 </div>
-               
-               
             </div>  
-           
         </div>  
     </form>
-    
-    
-   
 {% endblock %}
 
 {% block javascript%}
-<script>
-    var instance = M.Tabs.init(el);
-</script>
-
-<script type="text/javascript">	
-    function ActivarCampoOtroTema()
-        {var contenedor = document.getElementById("producto");		
-        contenedor.style.display = 'block';		return true;	}
-</script>
-<script type="text/javascript">	
-    function desactivar()
-        {var contenedor = document.getElementById("navegador");		
-        contenedor.style.display = 'none';		return true;	}
-</script>
-
-
-
-
-
 
 {% endblock%}

@@ -1,10 +1,7 @@
-{% extends "tienda/baseAd.html" %}
+{% extends "administrador/baseAd.html" %}
 
 {%block title %} All for Shonen{% endblock%}
-    {% block content%}
-
-    
-<br>
+{% block content%}
     <form method="POST"  action="editar_figura" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container white" > 
@@ -35,8 +32,6 @@
                     <input type="text" name="altura" id="altura" value="{{figura.altura}}">
                     <label for="altura">Altura</label>
                 </div>
-                
-                
                 <div class="input-field col l6">
                     <input type="text" name="material" id="material" value="{{figura.material}}" >
                     <label for="material">Material</label>
@@ -45,90 +40,41 @@
                     <select name="tipo" id="tipo" value="{{figura.tipo}}">
                         <option selected disabled>Seleccione Tipo de Figura</option>
                         {% if figura.tipo == "Articulable" %}
-                            <option value="articulable" selected>Articulable</option>
+                            <option value="Articulable" selected>Articulable</option>
                         {% else %}
                             <option value="Articulable">Articulable</option>
                         {% endif %}
                         {% if figura.tipo == "Armable" %}
-                            <option value="armable" selected>Armable</option>
+                            <option value="Armable" selected>Armable</option>
                         {% else %}
-                        <option value="armable">Armable</option>
+                        <option value="Armable">Armable</option>
                         {% endif %} 
                         {% if figura.tipo == "Estatua" %}
-                        <option value="estatua" selected>Estatua</option>
-                    {% else %}
-                    <option value="estatua">Estatua</option>
-                    {% endif %} 
+                        <option value="Estatua" selected>Estatua</option>
+                        {% else %}
+                        <option value="Estatua">Estatua</option>
+                        {% endif %} 
                     </select>
                 </div>
-                
                 <br>
                 <div class="input-field col l6 ">
                     <input type="file" name="foto" id="foto" >
                     {% if figura.foto %}
-                    <p>{{figura.foto.url }}</p>
-                   <p><img src="{{figura.foto.url}}"></p>
-                 {% endif %}
+                        <p>{{figura.foto.url }}</p>
+                        <p><img src="{{figura.foto.url}}"></p>
+                    {% endif %}
                 </div>
-                <div class="input-field col l6">
-                    <input type="hidden" name="id_figura" id="figura" data-file="{{figura.id_figura}}">
-                     
+                <div class="input-field col l6" style="display:none;">
+                    <input type="number" name="id_figura" id="id_figura" value="{{figura.id_figura}}">
                 </div>
                 <div class="clearfix"></div>
                 <button type="submit" class="btn red waves-effect" >
-                    <i class="material-icons right">check</i>
-                    Modificar
+                    <i class="material-icons right">check</i>Modificar
                 </button>
-
             </div>
         </div> 
-          </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-              
-               
-               
-               
-                
-    
-       
-    
-    
-    
-    
-    
+    </form>  
 {% endblock %}
-
 {% block javascript%}
-<script>
-    var instance = M.Tabs.init(el);
-</script>
-
-<script type="text/javascript">	
-    function ActivarCampoOtroTema()
-        {var contenedor = document.getElementById("producto");		
-        contenedor.style.display = 'block';		return true;	}
-</script>
-<script type="text/javascript">	
-    function desactivar()
-        {var contenedor = document.getElementById("navegador");		
-        contenedor.style.display = 'none';		return true;	}
-</script>
-
-
-
-
-
 
 {% endblock%}
