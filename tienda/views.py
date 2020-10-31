@@ -6,7 +6,7 @@ from .models import Manga
 from .models import Artbook
 from .models import Contacto
 from . import views
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def mangas(request):
     print("Hola estamos en la ventana mangas")
