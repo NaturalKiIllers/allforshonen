@@ -5,14 +5,14 @@
 
     
 <br>
-    <form method="POST"  action="editar_manga" enctype="multipart/form-data">
+    <form method="POST"  action="editar_art" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container white" > 
             <div class="row"> 			
                 
                 <div class="input-field col l6 ">
                     <input type="text"  name="codigoA " id="codigoA " value="{{artbook.codigoA}}" >
-                    <label for="direccion">Código de Manga</label>
+                    <label for="direccion">Código de Artbook</label>
                 </div>
                 <div class="input-field col l6 ">
                     <input type="text" name="nombre" id="nombre" value="{{artbook.nombre}}" >
@@ -42,8 +42,7 @@
                 </div>
                 
                 <div class="input-field col l6">
-                    <input type="hidden" name="id_manga" id="id_manga" value="{{artbook.id_art}}">
-                     
+                    <input type="number" style="display:none;" name="id_artbook" id="id_artbook" value="{{artbook.id_artbook}}">
                 </div>
     
                 <div class="clearfix"></div>

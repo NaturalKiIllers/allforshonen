@@ -25,10 +25,10 @@
                     {% else %}
                         <option value="Slam Dunk">Slam Dunk</option>
                     {% endif %}
-                    {% if manga.tipo == "Fullmetal Alquimist" %}
-                        <option value="Fullmetal Alquimist" selected>Fullmetal Alquimist</option>
+                    {% if manga.tipo == "Fullmetal Alchemist" %}
+                        <option value="Fullmetal Alquimist" selected>Fullmetal Alchemist</option>
                     {% else %}
-                        <option value="Fullmetal Alquimist">Fullmetal Alquimist</option>
+                        <option value="Fullmetal Alquimist">Fullmetal Alchemist</option>
                     {% endif %}   
                     {% if manga.tipo == "Dr.Stone" %}
                         <option value="Dr.Stone" selected>Dr.Stone</option>
@@ -58,15 +58,15 @@
             
             <br>
             <div class="input-field col l6 ">
-                <input type="file" name="fotoManga" id="fotoManga">
+                <input type="file" name="fotoM" id="fotoM">
                 {% if manga.fotoManga %}
                 <p>{{manga.fotoManga.url }}</p>
             <p><img src="{{manga.fotoManga.url}}"></p>
             {% endif %}
             </div>
             <div class="input-field col l6">
-                <input type="hidden" name="id_manga" id="id_manga" value="{{manga.id_manga}}">
-                
+                <input type="number" style="display:none;" name="id_manga" id="id_manga" value="{{manga.id_manga}}">
+                <input type="text" style="display:none;" name="editorial" id="editorial" value="{{manga.editorial}}">
             </div>
 
             <div class="clearfix"></div>
