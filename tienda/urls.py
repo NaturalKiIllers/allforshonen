@@ -23,6 +23,7 @@ urlpatterns = [
     path('MangaEn', views.MangaEn, name='MangaEn'),
     path('eliminar_manga', views.eliminar_manga, name='eliminar_manga'),
     path('agregar_manga', views.agregar_manga, name='agregar_manga'),
+    path('editar_manga', views.editar_manga, name='editar_manga'),
     
     path('editar_figura', views.editar_figura, name='editar_figura'),
     path('editar_manga', views.editar_manga, name='editar_manga'),
@@ -41,6 +42,7 @@ urlpatterns = [
     path('agregar_art', views.agregar_art, name='agregar_art'),
     path('ArtEn', views.ArtEn, name='ArtEn'),
     path('eliminar_art', views.eliminar_art, name='eliminar_art'),
+    path('editar_art', views.editar_art, name='editar_art'),
     
   
 

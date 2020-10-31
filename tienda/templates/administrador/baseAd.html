@@ -14,7 +14,7 @@
     <header>
       <nav id="logo">
         <div class="nav-wrapper white">
-          <a href="index" class="brand-logo center" ><img src="{% static 'imagenes/Index/PROTO.png' %}" style="height: 50%; width: 50%;" alt="logoPag"></a>
+          <a href="administrador" class="brand-logo center" ><img src="{% static 'imagenes/Index/PROTO.png' %}" style="height: 50%; width: 50%;" alt="logoPag"></a>
         </div>
       </nav>
       <br><br><br>
@@ -22,55 +22,21 @@
       <nav>
         <div class="nav-wrapper red">
           <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="index">Inicio</a></li>
-            <li>
-              <a class="dropdown-trigger" href="#!" data-target="dropdown-menu1">Tienda
-              <i class="material-icons right">arrow_drop_down</i></a>
-              <ul id="dropdown-menu1" class="dropdown-content">
-                <li><a href="figuras" >Figuras</a></li>
-                <li class="divider"></li>
-                <li><a href="mangas">Manga</a></li>
-                <li class="divider"></li>
-                <li><a href="artbooks">ArtBook</a></li>
-                <li class="divider"></li>
-              </ul>
-            </li>  
-            <li><a href="contacto">Contacto</a></li>
+            <li><a href="administrador">Inicio</a></li>
           </ul>
     <!--TODO:Menu usuario-->
-          <div class="right hide-on-med-and-down">                   
-            <a class="dropdown-trigger right hide-on-med-and-down" href="#!" data-target="dropdown-menu2">
-            <i class="material-icons right">arrow_drop_down</i>
-            <i class="material-icons">person</i></a>
-            <ul id="dropdown-menu2" class="dropdown-content">
-              <li><a href="registrarse">Registrarse</a></li>
-              <li class="divider"></li>
-            </ul>
-          </div>
-        </div>
+          
       </nav>
     </header>
+    
     <br><br><br>
-    <div id="left-sidebar-nav">
+    <div id="left-sidebar-nav" class="hola">
       <ul id="slide-out" class="side-nav fixed leftside-navigation ">
         <li class="no-padding">
-          <ul class="collapsible" data-collapsible="accordion">
-            <li>
-              <div class="user-view">
-                <div class="background">       
-                </div>
-                <a href="">
-                  <img src="" alt="" class="circle">
-                </a>
-                <a href="">
-                  <span class="name red-text">!Hola Administrador¡</span>
-                </a>   
-              </div>   
-            </li> 
-          </ul>             
+                  
           <ul class="collapsible">
             <li>
-              <div class="collapsible-header">Mangas</div>
+              <div class="collapsible-header ">Mangas</div>
               <div class="collapsible-body">
                 <a href="MangaAg" class="waves-effect waves-cyan">
                   <i class="material-icons">add</i>
@@ -127,7 +93,7 @@
                   <span class="nav-text">Buscar</span>
                 </a>        
                 <a href="ArtL" class="waves-effect waves-cyan">
-                  <i class="material-icons">pie_chart_outlined</i>
+                  <i class="material-icons">format_list_bulleted</i>
                   <span class="nav-text">Listar</span>
                 </a>
               </div>
@@ -148,7 +114,7 @@
                   <span class="nav-text">Buscar</span>
                 </a>
                 <a href="index.html" class="waves-effect waves-cyan">
-                    <i class="material-icons">pie_chart_outlined</i>
+                  <i class="material-icons">format_list_bulleted</i>
                     <span class="nav-text">Listar</span>
                 </a>
               </div>
@@ -156,12 +122,12 @@
             <li>
               <div class="collapsible-header">Ver tienda</div>
               <div class="collapsible-body">
-                <a href="index.html" class="waves-effect waves-cyan">
+                <a href="index" class="waves-effect waves-cyan">
                   <i class="material-icons">pie_chart_outlined</i>
                   <span class="nav-text">Pagina Principal</span>
                 </a>
               </div>
-              <a class="waves-effect waves-light btn"><i class="material-icons left">logout </i>logout</a>
+              <a class="waves-effect waves-light btn red"><i class="material-icons left">logout </i>logout</a>
             </li>
           </ul>
         </li> 
@@ -170,6 +136,7 @@
   {% block content %}
       
   {% endblock %}     
+  <br><br><br><br>
   <!--TODO:Footer-->
   <!--TODO:Footer-->
     <footer class="page-footer grey">

@@ -91,15 +91,15 @@ def eliminar_figura(request):
                if figura is not None:
                    print("figura=", figura)
                    figura.delete()
-                   return render(request, 'tienda/administrador.html', )
+                   return render(request, 'respuesta_crud/productos/eliminar.html', )
                else:
-                   return render(request, 'personas/error/error_202.html',{})
+                   return render(request, 'respuesta_crud/productos/noexiste.html',{})
            except figura.DoesNotExist:
-               return render(request, 'personas/error/error_202.html', {})
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
-           return render(request, 'personas/error/error_201.html', {})
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/error_203.html', {})
+        return render(request, 'respuesta_crud/productos/noexiste.html', {})
 
 
 def agregar_contacto(request):
@@ -212,13 +212,13 @@ def FiguraEn(request):
                    context={'figura':figura}
                    return render(request, 'administrador/crud/figuraEn.html', context)
                 else:
-                   return render(request, 'personas/mensaje_alumno_elminado.html',{})
+                   return render(request, 'respuesta_crud/productos/noexiste.html',{})
            except figura.DoesNotExist:
-               return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
-           return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
 
 def editar_figura(request):
     print("hola  estoy en agregar_figura...")
@@ -247,14 +247,13 @@ def editar_figura(request):
                figura.tipo       = var_tipo
                figura.foto       = var_foto
                figura.save()
-               return render( request,'administrador/administrador.html',{})
-
+               return render( request,'respuesta_crud/productos/modificar.html',{})
             except figura.DoesNotExist:
-               return render(request, 'personas/error/error_204.html', {})
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
-           return render(request, 'personas/error/error_201.html', {})
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/error_203.html', {})
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
 
 def eliminar_manga(request):
     print("hola  estoy en eliminar_figura")
@@ -267,20 +266,21 @@ def eliminar_manga(request):
                if manga is not None:
                    print("manga=", manga)
                    manga.delete()
-                   return render(request, 'administrador/administrador.html', )
+                   return render(request, 'respuesta_crud/productos/eliminar.html', )
                else:
-                   return render(request, 'personas/error/error_202.html',{})
+                   return render(request, 'respuesta_crud/productos/noexiste.html',{})
            except manga.DoesNotExist:
-               return render(request, 'personas/error/error_202.html', {})
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
-           return render(request, 'personas/error/error_201.html', {})
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/error_203.html', {})
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
 
 def editar_manga(request):
     print("hola  estoy en agregar_figura...")
     if request.method == 'POST':
-        var_codigo = request.POST['codigoM']
+        var_id_manga = request.POST['id_manga']
+        var_codigoM = request.POST['codigoM']
         var_nombre = request.POST['nombre']
         var_editorial = request.POST['editorial']
         var_tipo= request.POST['tipo']    
@@ -288,10 +288,11 @@ def editar_manga(request):
         var_nombre_desc = request.POST['nombre_desc']
         var_descripcion = request.POST['descripcion']
         var_fotoManga= request.FILES['fotoM']
-        if var_codigo != "":
+        if var_codigoM != "":
             try:
                manga = Manga()
-               manga.codigoM          = var_codigo
+               manga.id_manga         = var_id_manga
+               manga.codigoM          = var_codigoM
                manga.nombre           = var_nombre 
                manga.editorial        = var_editorial
                manga.tipo             = var_tipo
@@ -300,14 +301,14 @@ def editar_manga(request):
                manga.descripcion      = var_descripcion
                manga.fotoManga        = var_fotoManga
                manga.save()
-               return render( request,'administrador/administrador.html',{})
+               return render( request,'respuesta_crud/productos/modificar.html',{})
 
             except manga.DoesNotExist:
-               return render(request, 'personas/error/error_204.html', {})
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
-           return render(request, 'personas/error/error_201.html', {})
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/error_203.html', {})
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
 
 def agregar_manga(request):
     print("hola  estoy en agregar_figura...")
@@ -332,14 +333,14 @@ def agregar_manga(request):
                manga.descripcion      = var_descripcion
                manga.fotoManga        = var_fotoManga
                manga.save()
-               return render( request,'administrador/administrador.html',{})
+               return render( request,'respuesta_crud/productos/agregado_corr.html',{})
 
             except manga.DoesNotExist:
-               return render(request, 'personas/error/error_204.html', {})
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
-           return render(request, 'personas/error/error_201.html', {})
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/error_203.html', {})
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
 
 def MangaEn(request):
     if request.method == 'POST':
@@ -352,13 +353,13 @@ def MangaEn(request):
                         context={'manga':manga}
                         return render(request, 'administrador/crud/mangaEn.html', context)
                     else:
-                        return render(request, 'personas/mensaje_alumno_elminado.html',{})
+                        return render(request, 'respuesta_crud/productos/noexiste.html',{})
                 except manga.DoesNotExist:
-                    return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+                    return render(request, 'respuesta_crud/productos/noexiste.html', {})
             else:
-                return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+                return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
 
 
 def agregar_art(request):
@@ -380,14 +381,14 @@ def agregar_art(request):
                artbook.descripcion      = var_descripcion
                artbook.fotoArtbook      = var_fotoArtbook
                artbook.save()
-               return render( request,'tienda/administrador.html',{})
+               return render( request,'respuesta_crud/productos/agregado_corr.html',{})
 
             except artbook.DoesNotExist:
-               return render(request, 'personas/error/error_204.html', {})
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
         else:
-           return render(request, 'personas/error/error_201.html', {})
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/error_203.html', {})
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
 
 def ArtEn(request):
     if request.method == 'POST':
@@ -402,11 +403,12 @@ def ArtEn(request):
                     else:
                         return render(request, 'personas/mensaje_alumno_elminado.html',{})
                 except artbook.DoesNotExist:
-                    return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+                    return render(request, 'respuesta_crud/productos/noexiste.html', {})
             else:
-                return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+                return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
-        return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
+
 def eliminar_art(request):
     if request.method == 'POST':
             var_codigo = request.POST['codigoA']
@@ -417,14 +419,42 @@ def eliminar_art(request):
                     if artbook is not None:
                         print("artbook =", artbook)
                         artbook.delete()
-                        return render(request, 'tienda/administrador.html', {})
+                        return render(request, 'respuesta_crud/productos/eliminar.html', {})
                     else:
-                        return render(request, 'personas/mensaje_alumno_elminado.html',{})
+                        return render(request, 'respuesta_crud/productos/noexiste.html',{})
                 except artbook.DoesNotExist:
-                    return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+                    return render(request, 'respuesta_crud/productos/noexiste.html', {})
             else:
-                return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+                return render(request, 'respuesta_crud/productos/noexiste.html', {})
     else:
-        return render(request, 'personas/error/mensaje_alumno_elminado.html', {})
+        return render(request, 'respuesta_crud/productos/noexiste.html', {})
 
+def editar_art(request):
+    print("hola  estoy en modificar artbook...")
+    if request.method == 'POST':
+        var_id_artbook = request.POST['id_artbook']
+        var_codigoA = request.POST['codigoA']
+        var_nombre = request.POST['nombre']
+        var_precio = request.POST['precio']
+        var_nombre_desc = request.POST['nombre_desc']
+        var_descripcion = request.POST['descripcion']
+        var_fotoArtbook     = request.FILES['fotoArtbook']
+        if var_codigoA != "":
+            try:
+               artbook = Artbook()
+               artbook.id_artbook       = var_id_artbook
+               artbook.codigoA         = var_codigoA
+               artbook.nombre           = var_nombre 
+               artbook.precio           = var_precio
+               artbook.nombre_desc      = var_nombre_desc 
+               artbook.descripcion      = var_descripcion
+               artbook.fotoArtbook      = var_fotoArtbook
+               artbook.save()
+               return render( request,'respuesta_crud/productos/modificar.html',{})
 
+            except artbook.DoesNotExist:
+               return render(request, 'respuesta_crud/productos/noexiste.html', {})
+        else:
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
+    else:
+        return render(request, 'respuesta_crud/productos/Vacio.html', {})
