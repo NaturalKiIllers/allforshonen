@@ -26,8 +26,10 @@
       <h1>Slam Dunk</h1>
       <br>
       <div class="col s1"></div>
-       {% for manga in mangas %}
-        {% if manga.tipo == "Slam Dunk"  %}
+    
+       {% for manga in slams %}
+     
+      
        <div class="card white left hoverable" style="height: 320px; width: 200px;">
          <div class="card-image">
            <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
@@ -43,7 +45,6 @@
          </div>
        </div>  
        <div class="col 1"></div>
-       {% endif %}  
       
        {% endfor %}
       
@@ -54,8 +55,8 @@
         <h1>Dr.Stone</h1>
         <br>
         <div class="col s1"></div>
-         {% for manga in mangas %}
-          {% if manga.tipo == "Dr.Stone"  %}
+         {% for manga in stones %}
+        
          <div class="card white left hoverable" style="height: 320px; width: 200px;">
            <div class="card-image">
              <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
@@ -72,7 +73,7 @@
          </div>  
          <div class="col 1"></div>
          
-        {% endif %}  
+   
         
          {% endfor %}
         
@@ -95,8 +96,7 @@
         <h1>Fullmetal Alchimist Brotherhood</h1>
         <br>
         <div class="col s1"></div>
-         {% for manga in mangas %}
-          {% if manga.tipo == "Fullmetal Alchemist"  %}
+         {% for manga in fhs %}
          <div class="card white left hoverable"  style="height: 320px; width: 200px;">
            <div class="card-image ">
              <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
@@ -112,7 +112,7 @@
            </div>
          </div>  
          <div class="col 1"></div>
-         {% endif %}  
+       
         
          {% endfor %}
         
@@ -125,8 +125,8 @@
           <h1>Kimetsu No Yaiba</h1>
           <br>
           <div class="col s1"></div>
-           {% for manga in mangas %}
-            {% if manga.tipo == "Kimetsu No Yaiba"  %}
+           {% for manga in kns %}
+           
            <div class="card white left hoverable" style="height: 320px; width: 200px;">
              <div class="card-image">
                <img class="materialboxed " src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
@@ -143,8 +143,7 @@
            </div>  
            <div class="col 1"></div>
            
-          {% endif %}  
-          
+      
            {% endfor %}
           
           </div>

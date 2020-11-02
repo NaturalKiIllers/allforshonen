@@ -1,18 +1,25 @@
 from django.shortcuts import render , redirect
+from django.db import IntegrityError
 from django.contrib import admin
 from django.urls import path, include
 from .models import Figura
 from .models import Manga
 from .models import Artbook
 from .models import Contacto
+from .models import User
 from . import views
 
 # Create your views here.
 def mangas(request):
     print("Hola estamos en la ventana mangas")
-    manga= Manga.objects.all()
-    context={ 'mangas': manga}
-    return render(request, 'tienda/mangas.html', context)
+    slam= Manga.objects.filter(activo=1,tipo='Slam Dunk')
+    stone=Manga.objects.filter(activo=1,tipo='Dr.Stone')
+    kn=Manga.objects.filter(activo=1,tipo='Kimetsu No Yaiba')
+    fh=Manga.objects.filter(activo=1,tipo='Fullmetal Alchemist')
+  
+    context={ 'slams': slam,'stones':stone,'kns':kn,'fhs':fh}
+   
+    return render(request, 'tienda/mangas.html', context )
 
 def index(request):
     print("Hola estamos en la ventana index")
@@ -21,7 +28,7 @@ def index(request):
 
 def artbooks(request):
     print("Hola estamos en la ventana artbooks")
-    artbook= Artbook.objects.all()
+    artbook= Artbook.objects.filter(activo=1)
     context={ 'artbooks' : artbook}
     return render(request, 'tienda/artbooks.html', context)
 
@@ -32,7 +39,7 @@ def registrarse(request):
 
 def figuras(request):
     print("ok,estamos en la vista figura")
-    figura= Figura.objects.all()
+    figura= Figura.objects.filter(activo=1)
     context={ 'figuras':figura }
     return render(request, 'tienda/figuras.html', context)
 
@@ -70,11 +77,12 @@ def agregar_figura(request):
                figura.material   = var_material
                figura.tipo       = var_tipo
                figura.foto       = var_foto
+               figura.activo     = 1
                figura.save()
                return render( request,'respuesta_crud/productos/agregado_corr.html',{})
 
-            except figura.DoesNotExist:
-               return render(request, 'respuesta_crud/productos/noexiste.html', {})
+            except IntegrityError:
+               return render(request, 'respuesta_crud/productos/existe.html', {})
         else:
            return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
@@ -122,7 +130,7 @@ def agregar_contacto(request):
 
 def administrador(request):
     print("Hola estamos en la ventana admin")
-    context={ }
+    
     return render(request, 'administrador/administrador.html', {})
    
 def usuarios(request):
@@ -246,6 +254,7 @@ def editar_figura(request):
                figura.material   = var_material
                figura.tipo       = var_tipo
                figura.foto       = var_foto
+               figura.activo     = 1
                figura.save()
                return render( request,'respuesta_crud/productos/modificar.html',{})
             except figura.DoesNotExist:
@@ -300,6 +309,7 @@ def editar_manga(request):
                manga.nombre_desc      = var_nombre_desc 
                manga.descripcion      = var_descripcion
                manga.fotoManga        = var_fotoManga
+               manga.activo           = 1
                manga.save()
                return render( request,'respuesta_crud/productos/modificar.html',{})
 
@@ -332,11 +342,12 @@ def agregar_manga(request):
                manga.nombre_desc      = var_nombre_desc 
                manga.descripcion      = var_descripcion
                manga.fotoManga        = var_fotoManga
+               manga.activo           =1
                manga.save()
                return render( request,'respuesta_crud/productos/agregado_corr.html',{})
 
-            except manga.DoesNotExist:
-               return render(request, 'respuesta_crud/productos/noexiste.html', {})
+            except IntegrityError :
+               return render(request, 'respuesta_crud/productos/existe.html', {})
         else:
            return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
@@ -380,11 +391,12 @@ def agregar_art(request):
                artbook.nombre_desc      = var_nombre_desc 
                artbook.descripcion      = var_descripcion
                artbook.fotoArtbook      = var_fotoArtbook
+               artbook.activo           =1
                artbook.save()
                return render( request,'respuesta_crud/productos/agregado_corr.html',{})
 
-            except artbook.DoesNotExist:
-               return render(request, 'respuesta_crud/productos/noexiste.html', {})
+            except IntegrityError:
+               return render(request, 'respuesta_crud/productos/existe.html', {})
         else:
            return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
@@ -458,3 +470,43 @@ def editar_art(request):
            return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
         return render(request, 'respuesta_crud/productos/Vacio.html', {})
+
+def agregar_usuario(request):
+    print("hola  estoy en agregar_figura...")
+    if request.method == 'POST':
+        var_usuario = request.POST['username']
+        var_contraseña  = request.POST['password']
+        var_email = request.POST['email']
+        var_nombre = request.POST['first_name']
+        var_apellido = request.POST['last_name']
+        if var_usuario != "":
+            try:
+               usuario = User()
+               usuario.username   = var_usuario
+               usuario.email      = var_email 
+               usuario.set_password(var_contraseña)
+               usuario.first_name = var_nombre
+               usuario.last_name  = var_apellido
+               usuario.save()
+               return render( request,'respuesta_crud/cliente/agregado_corr.html',{})
+
+            except IntegrityError:
+               return render(request, 'respuesta_crud/productos/existe.html', {})
+        else:
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
+    else:
+        return render(request, 'respuesta_crud/productos/noexiste.html', {})
+
+def registro(request):
+    print("Hola estamos en la ventana index")
+    usuario= User.objects.all()
+    context={ 'usuarios':usuario}
+    return render(request, 'registration/registro.html', context)
+
+def usuarioL(request):
+    print("Hola estamos en la ventana index")
+    usuario= User.objects.all()
+    context={ 'usuarios':usuario}
+    return render(request, 'administrador/crudUsuario/usuarioL.html', context)
+
+   

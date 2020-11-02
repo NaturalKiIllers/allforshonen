@@ -43,7 +43,7 @@ urlpatterns = [
     path('ArtEn', views.ArtEn, name='ArtEn'),
     path('eliminar_art', views.eliminar_art, name='eliminar_art'),
     path('editar_art', views.editar_art, name='editar_art'),
-    
-  
-
+    path('registro', views.registro, name='registro'),
+    path('agregar_usuario', views.agregar_usuario, name='agregar_usuario'),
+    path('usuarioL', views.usuarioL, name='usuarioL'),
 ]

@@ -28,9 +28,10 @@
                 </div>
                 <br>
                 <div class="input-field col l6 ">
-                    <input type="file" name="fotoArtbook" id="fotoArtbook">
+                    <input type="file" name="fotoArtbook" id="fotoArtbook"  >
+                
                     {% if artbook.fotoArtbook %}
-                        <p>{{artbook.fotoArtbook.url }}</p>
+                        <p id="valor">{{artbook.fotoArtbook.url }}</p>
                         <p><img src="{{artbook.fotoArtbook.url}}"></p>
                     {% endif %}
                 </div>
