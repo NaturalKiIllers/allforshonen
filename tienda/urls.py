@@ -48,4 +48,12 @@ urlpatterns = [
     path('cambiar_contra', views.cambiar_contra, name='cambiar_contra'),
     path('correcto', views.correcto, name="correcto")
 
+    path('registro', views.registro, name='registro'),
+    path('agregar_usuario', views.agregar_usuario, name='agregar_usuario'),
+    path('usuarioL', views.usuarioL, name='usuarioL'),
+    path('usuarioEl', views.usuarioEl, name='usuarioEl'),
+    path('usuarioBu', views.usuarioBu, name='usuarioBu'),
+    path('usuarioEn', views.usuarioEn, name='usuarioEn'),
+    path('eliminar_usuario', views.eliminar_usuario, name='eliminar_usuario'),
+    path('editar_usuario', views.editar_usuario, name='editar_usuario'),
 ]
