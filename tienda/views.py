@@ -491,11 +491,11 @@ def agregar_usuario(request):
                return render( request,'respuesta_crud/cliente/agregado_corr.html',{})
 
             except IntegrityError:
-               return render(request, 'respuesta_crud/productos/existe.html', {})
+               return render(request, 'respuesta_crud/cliente/existe.html', {})
         else:
-           return render(request, 'respuesta_crud/productos/Vacio.html', {})
+           return render(request, 'respuesta_crud/cliente/Vacio.html', {})
     else:
-        return render(request, 'respuesta_crud/productos/noexiste.html', {})
+        return render(request, 'respuesta_crud/cliente/noexiste.html', {})
 
 def registro(request):
     print("Hola estamos en la ventana index")
@@ -527,13 +527,13 @@ def usuarioEn(request):
                         context={'usuario':usuario}
                         return render(request,'administrador/crudUsuario/usuarioEn.html', context)
                     else:
-                        return render(request, 'respuesta_crud/productos/noexiste.html',{})
+                        return render(request, 'respuesta_crud/cliente/noexiste.html',{})
                 except usuario.DoesNotExist:
-                    return render(request, 'respuesta_crud/productos/noexiste.html', {})
+                    return render(request, 'respuesta_crud/cliente/noexiste.html', {})
             else:
-                return render(request, 'respuesta_crud/productos/noexiste.html', {})
+                return render(request, 'respuesta_crud/cliente/noexiste.html', {})
     else:
-        return render(request, 'respuesta_crud/productos/noexiste.html', {})
+        return render(request, 'respuesta_crud/cliente/noexiste.html', {})
   
 def eliminar_usuario(request):
     if request.method == 'POST':
@@ -545,15 +545,15 @@ def eliminar_usuario(request):
                     if usuario is not None:
                         print("usuario =", usuario)
                         usuario.delete()
-                        return render(request, 'respuesta_crud/productos/eliminar.html', {})
+                        return render(request, 'respuesta_crud/cliente/eliminar.html', {})
                     else:
-                        return render(request, 'respuesta_crud/productos/noexiste.html',{})
+                        return render(request, 'respuesta_crud/cliente/noexiste.html',{})
                 except usuario.DoesNotExist:
-                    return render(request, 'respuesta_crud/productos/noexiste.html', {})
+                    return render(request, 'respuesta_crud/cliente/noexiste.html', {})
             else:
-                return render(request, 'respuesta_crud/productos/noexiste.html', {})
+                return render(request, 'respuesta_crud/cliente/noexiste.html', {})
     else:
-        return render(request, 'respuesta_crud/productos/noexiste.html', {})
+        return render(request, 'respuesta_crud/cliente/noexiste.html', {})
 
 def editar_usuario(request):
     print("hola  estoy en agregar_figura...")
