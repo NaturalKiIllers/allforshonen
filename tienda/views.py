@@ -455,7 +455,7 @@ def editar_art(request):
             try:
                artbook = Artbook()
                artbook.id_artbook       = var_id_artbook
-               artbook.codigoA         = var_codigoA
+               artbook.codigoA          = var_codigoA
                artbook.nombre           = var_nombre 
                artbook.precio           = var_precio
                artbook.nombre_desc      = var_nombre_desc 
@@ -499,9 +499,8 @@ def agregar_usuario(request):
 
 def registro(request):
     print("Hola estamos en la ventana index")
-    usuario= User.objects.all()
-    context={ 'usuarios':usuario}
-    return render(request, 'registration/registro.html', context)
+    return render(request, 'registration/registro.html', {})
+
 
 def usuarioL(request):
     print("Hola estamos en la ventana index")
@@ -509,4 +508,71 @@ def usuarioL(request):
     context={ 'usuarios':usuario}
     return render(request, 'administrador/crudUsuario/usuarioL.html', context)
 
-   
+def usuarioEl(request):
+    print("Hola estamos en la ventana index")
+    return render(request, 'administrador/crudUsuario/usuarioEl.html', {})
+
+def usuarioBu(request):
+    print("Hola estamos en la ventana index")
+    return render(request, 'administrador/crudUsuario/usuarioBu.html', {})
+
+def usuarioEn(request):
+    if request.method == 'POST':
+            var_name = request.POST['username']
+            if var_name != "":
+                try:
+                    usuario = User()
+                    usuario= User.objects.get(username=var_name)
+                    if usuario is not None:
+                        context={'usuario':usuario}
+                        return render(request,'administrador/crudUsuario/usuarioEn.html', context)
+                    else:
+                        return render(request, 'respuesta_crud/productos/noexiste.html',{})
+                except usuario.DoesNotExist:
+                    return render(request, 'respuesta_crud/productos/noexiste.html', {})
+            else:
+                return render(request, 'respuesta_crud/productos/noexiste.html', {})
+    else:
+        return render(request, 'respuesta_crud/productos/noexiste.html', {})
+  
+def eliminar_usuario(request):
+    if request.method == 'POST':
+            var_name = request.POST['username']
+            if var_name != "":
+                try:
+                    usuario = User()
+                    usuario= User.objects.get(username=var_name)
+                    if usuario is not None:
+                        print("usuario =", usuario)
+                        usuario.delete()
+                        return render(request, 'respuesta_crud/productos/eliminar.html', {})
+                    else:
+                        return render(request, 'respuesta_crud/productos/noexiste.html',{})
+                except usuario.DoesNotExist:
+                    return render(request, 'respuesta_crud/productos/noexiste.html', {})
+            else:
+                return render(request, 'respuesta_crud/productos/noexiste.html', {})
+    else:
+        return render(request, 'respuesta_crud/productos/noexiste.html', {})
+
+def editar_usuario(request):
+    print("hola  estoy en agregar_figura...")
+    if request.method == 'POST':
+        var_usuario = request.POST['username']
+        var_contraseña  = request.POST['password']
+        var_is_active = request.POST["is_active"]
+        var_is_staff = request.POST["is_staff"]
+        if var_usuario != "":
+            try:
+              
+               usuario = User.objects.get(username=var_usuario)
+               usuario.set_password(var_contraseña)
+               usuario.save()
+               return render( request,'respuesta_crud/cliente/agregado_corr.html',{})
+            except usuario.DoesNotExist:
+               return render(request, 'respuesta_crud/productos/existe.html', {})
+        else:
+           return render(request, 'respuesta_crud/productos/Vacio.html', {})
+    else:
+        return render(request, 'respuesta_crud/productos/noexiste.html', {})
+  

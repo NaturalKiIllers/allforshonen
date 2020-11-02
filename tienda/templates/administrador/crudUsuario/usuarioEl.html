@@ -3,13 +3,13 @@
 {%block title %} All for Shonen{% endblock%}
 {% block content%}
     <br><br>
-    <form method="POST" action="eliminar_figura" enctype="multipart/form-data">
+    <form method="POST" action="eliminar_usuario" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="container white" > 
             <div class="row">
                 <div class="input-field col l6 ">
-                    <input type="text" name="codigof" id="codigof"   >
-                    <label for="codigof"> Indique el código de figura para eliminar</label>
+                    <input type="text" name="username" id="username"   >
+                    <label for="username"> Indique el nombre de usuario a eliminar</label>
                 </div>
                 <div class="input-field col l6 ">
                     <button type="submit" class="btn red waves-effect" >

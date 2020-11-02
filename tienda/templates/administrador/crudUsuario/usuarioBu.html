@@ -3,16 +3,16 @@
 {%block title %} All for Shonen{% endblock%}
 {% block content%}
     <br><br>
-    <form method="POST" action="FiguraEn">
+    <form method="POST" action="usuarioEn">
         {% csrf_token %}
         <div class="container white" > 
             <div class="row"> 			
                 <div class="input-field col l6 ">
-                    <input type="text" name="codigof" id="codigof"   >
-                    <label for="codigoM"> Indique el código de figura para buscar</label>
+                    <input type="text" name="username" id="username">
+                    <label for="username"> Indique el nombre de usuario para buscar</label>
                 </div>
                 <div class="input-field col l6 ">
-                    <button type="submit" class="btn red waves-effect" >
+                    <button type="submit" class="btn red waves-effect">
                         <i class="material-icons right">search</i>Buscar
                     </button>
                 </div>
