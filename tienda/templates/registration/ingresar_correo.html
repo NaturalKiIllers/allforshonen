@@ -1,0 +1,44 @@
+{% extends "registration/base_login.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+
+{% block content%}
+
+<form method="POST" action="cambiar_contra" >
+    {% csrf_token %}
+    <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4">
+            <div class="form-group center">
+                <br><br>
+                <label for="email">Ingrese Correo para reestablecer contraseña </label>
+                <input class="form-control" type="email" name="email">
+                <br><br>
+                <input class="btn btn-success float-right red" type="submit" value="Ingresar" >
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    </form>  
+
+{% endblock %}

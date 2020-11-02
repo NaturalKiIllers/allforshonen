@@ -1,0 +1,53 @@
+{% extends "registration/base_login.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+
+{% block content%}
+
+<form method="POST" action="correcto">
+    {% csrf_token %}
+    <div class="row">
+
+    <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4">
+            <div class="form-group center">
+                <br><br>
+                <label for="username">Nombre de usuario</label>
+                <input class="form-control" type="text" name="username">
+                <br>
+                <br>
+                <br>
+                <label for="contraseña">Contraseña </label>
+                <input class="form-control" type="password" name="password">
+
+                <br>
+                <label for="contraseña"> Confirmar Contraseña </label>
+                <input class="form-control" type="password" name="password">
+                <input class="btn btn-success float-right red" type="submit" value="Confirmar" >
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    </form>  
+
+{% endblock%}

@@ -458,3 +458,24 @@ def editar_art(request):
            return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
         return render(request, 'respuesta_crud/productos/Vacio.html', {})
+
+
+
+
+
+
+
+def ingresar_correo(request):
+    print("Hola estamos en la ventana del email")
+    context={}
+    return render(request, 'registration/ingresar_correo.html', context)
+
+def cambiar_contra(request):
+    print("Hola estamos en la ventana del email")
+    context={}
+    return render(request, 'registration/cambiar_contra.html', context)
+
+def correcto(request):
+    print("Hola estamos en la ventana del email")
+    context={}
+    return render(request, 'registration/correcto.html', context)

@@ -50,7 +50,9 @@
             <i class="material-icons right">arrow_drop_down</i>
             <i class="material-icons">person</i></a>
             <ul id="dropdown-menu2" class="dropdown-content">
-              <li><a href="registrarse">Registrarse</a></li>
+              {% if not user.is_authenticated%}
+              <li sytle="style=display:none;"><a href="registrarse">Registrarse</a></li>
+              {% endif %}
               <li class="divider"></li>
               {% if user.is_authenticated%}
                 <li><a href="{% url 'logout'%}" >Cerrar Sesión</a></li>

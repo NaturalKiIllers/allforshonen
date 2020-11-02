@@ -44,6 +44,8 @@ urlpatterns = [
     path('eliminar_art', views.eliminar_art, name='eliminar_art'),
     path('editar_art', views.editar_art, name='editar_art'),
     
-  
+    path('ingresar_correo', views.ingresar_correo, name='ingresar_correo'),
+    path('cambiar_contra', views.cambiar_contra, name='cambiar_contra'),
+    path('correcto', views.correcto, name="correcto")
 
 ]
