@@ -8,7 +8,7 @@ from .models import Artbook
 from .models import Contacto
 from .models import User
 from . import views
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 # Create your views here.
 def mangas(request):
     print("Hola estamos en la ventana mangas")
@@ -590,7 +590,7 @@ def editar_usuario(request):
             except usuario.DoesNotExist:
                return render(request, 'respuesta_crud/cliente/existe.html', {})
         else:
-           return render(request, 'respuesta_crud/cliente/vacio.html', {})
+           return render(request, 'registration/errores/vacio.html', {})
     else:
         return render(request, 'respuesta_crud/cliente/noexiste.html', {})
   
