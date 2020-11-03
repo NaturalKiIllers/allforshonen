@@ -10,6 +10,8 @@ from .models import User
 from . import views
 from django.contrib.auth.decorators import login_required, permission_required
 # Create your views here.
+
+#Tienda
 def mangas(request):
     print("Hola estamos en la ventana mangas")
     slam= Manga.objects.filter(activo=1,tipo='Slam Dunk')
@@ -32,11 +34,6 @@ def artbooks(request):
     context={ 'artbooks' : artbook}
     return render(request, 'tienda/artbooks.html', context)
 
-def registrarse(request):
-    print("Hola estamos en la ventana registrarse")
-    context={}
-    return render(request, 'tienda/registrarse.html', context)
-
 def figuras(request):
     print("ok,estamos en la vista figura")
     figura= Figura.objects.filter(activo=1)
@@ -52,6 +49,27 @@ def login(redirect):
     print("Hola estamos en la ventana de login")
     context={}
     return redirect(request, 'accounts/login.html', context)
+#Crud Figura
+def FiguraAg(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/figuraAg.html', context)
+
+def FiguraEl(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/figuraEl.html', context)
+
+def FiguraBu(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/figuraBu.html', context)
+
+def FiguraL(request):
+    print("Hola estamos en la ventana admin")
+    figura= Figura.objects.all()
+    context={ 'figuras':figura }
+    return render(request, 'administrador/crud/figuraL.html', context)  
 
 def agregar_figura(request):
     print("hola  estoy en agregar_figura...")
@@ -109,105 +127,6 @@ def eliminar_figura(request):
     else:
         return render(request, 'respuesta_crud/productos/noexiste.html', {})
 
-
-def agregar_contacto(request):
-    
-    if request.method == 'POST':
-        var_nombres = request.POST['nombres']
-        var_correo  = request.POST['correo']
-        var_asunto  = request.POST['asunto']
-        var_mensaje = request.POST['mensaje']
-        
-        contacto = Contacto()
-        contacto.nombres     = var_nombres
-        contacto.correo      = var_correo 
-        contacto.asunto      = var_asunto 
-        contacto.mensaje     = var_mensaje
-        contacto.save()
-        return render(request,"tienda/index.html",{})
-    else:
-        return render(request, 'personas/error/error_203.html', {})
-
-def administrador(request):
-    print("Hola estamos en la ventana admin")
-    
-    return render(request, 'administrador/administrador.html', {})
-   
-def usuarios(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'tienda/usuarios.html', context)
-
-def MangaAg(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/mangaAg.html', context)
-
-def MangaEl(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/mangaEl.html', context)
-
-def MangaBu(request):
-    
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/mangaBu.html', context)
-
-def MangaL(request):
-    print("Hola estamos en la ventana admin")
-    manga= Manga.objects.all()
-    context={ 'mangas':manga }
-    return render(request, 'administrador/crud/mangaL.html', context)  
-
-
-
-def FiguraAg(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/figuraAg.html', context)
-
-def FiguraEl(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/figuraEl.html', context)
-
-def FiguraBu(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/figuraBu.html', context)
-
-def FiguraL(request):
-    print("Hola estamos en la ventana admin")
-    figura= Figura.objects.all()
-    context={ 'figuras':figura }
-    return render(request, 'administrador/crud/figuraL.html', context)  
-
-
-
-def ArtAg(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/artAg.html', context)
-
-def ArtEl(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/artEl.html', context)
-
-def ArtBu(request):
-    print("Hola estamos en la ventana index")
-    context={}
-    return render(request, 'administrador/crud/artBu.html', context)
-
-def ArtL(request):
-    print("Hola estamos en la ventana admin")
-    artbook= Artbook.objects.all()
-    context={ 'artbooks' : artbook}
-    return render(request, 'administrador/crud/artL.html', context)  
-
-
-
 def FiguraEn(request):
    
     if request.method == 'POST':
@@ -263,6 +182,29 @@ def editar_figura(request):
            return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
         return render(request, 'respuesta_crud/productos/Vacio.html', {})
+
+#Crud Manga
+def MangaAg(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/mangaAg.html', context)
+
+def MangaEl(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/mangaEl.html', context)
+
+def MangaBu(request):
+    
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/mangaBu.html', context)
+
+def MangaL(request):
+    print("Hola estamos en la ventana admin")
+    manga= Manga.objects.all()
+    context={ 'mangas':manga }
+    return render(request, 'administrador/crud/mangaL.html', context)  
 
 def eliminar_manga(request):
     print("hola  estoy en eliminar_figura")
@@ -371,7 +313,27 @@ def MangaEn(request):
                 return render(request, 'respuesta_crud/productos/Vacio.html', {})
     else:
         return render(request, 'respuesta_crud/productos/Vacio.html', {})
+#Crud Art
+def ArtAg(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/artAg.html', context)
 
+def ArtEl(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/artEl.html', context)
+
+def ArtBu(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'administrador/crud/artBu.html', context)
+
+def ArtL(request):
+    print("Hola estamos en la ventana admin")
+    artbook= Artbook.objects.all()
+    context={ 'artbooks' : artbook}
+    return render(request, 'administrador/crud/artL.html', context)  
 
 def agregar_art(request):
     print("hola  estoy en agregar_figura...")
@@ -471,26 +433,7 @@ def editar_art(request):
     else:
         return render(request, 'respuesta_crud/productos/Vacio.html', {})
 
-
-
-
-
-
-
-def ingresar_correo(request):
-    print("Hola estamos en la ventana del email")
-    context={}
-    return render(request, 'registration/ingresar_correo.html', context)
-
-def cambiar_contra(request):
-    print("Hola estamos en la ventana del email")
-    context={}
-    return render(request, 'registration/cambiar_contra.html', context)
-
-def correcto(request):
-    print("Hola estamos en la ventana del email")
-    context={}
-    return render(request, 'registration/correcto.html', context)
+#Crud Usuario
 def agregar_usuario(request):
     print("hola  estoy en agregar_figura...")
     if request.method == 'POST':
@@ -508,19 +451,33 @@ def agregar_usuario(request):
                usuario.first_name = var_nombre
                usuario.last_name  = var_apellido
                usuario.save()
-               return render( request,'respuesta_crud/cliente/agregado_corr.html',{})
+               return render( request,'registration/agregado_corr.html',{})
 
             except IntegrityError:
-               return render(request, 'respuesta_crud/cliente/existe.html', {})
+               return render(request, 'registration/existe.html', {})
         else:
            return render(request, 'respuesta_crud/cliente/vacio.html', {})
     else:
         return render(request, 'respuesta_crud/cliente/noexiste.html', {})
 
+def ingresar_correo(request):
+    print("Hola estamos en la ventana del email")
+    context={}
+    return render(request, 'registration/ingresar_correo.html', context)
+
+def cambiar_contra(request):
+    print("Hola estamos en la ventana del email")
+    context={}
+    return render(request, 'registration/cambiar_contra.html', context)
+
+def correcto(request):
+    print("Hola estamos en la ventana del email")
+    context={}
+    return render(request, 'registration/correcto.html', context)
+
 def registro(request):
     print("Hola estamos en la ventana index")
     return render(request, 'registration/registro.html', {})
-
 
 def usuarioL(request):
     print("Hola estamos en la ventana index")
@@ -594,3 +551,43 @@ def editar_usuario(request):
     else:
         return render(request, 'respuesta_crud/cliente/noexiste.html', {})
   
+def agregar_contacto(request):
+    
+    if request.method == 'POST':
+        var_nombres = request.POST['nombres']
+        var_correo  = request.POST['correo']
+        var_asunto  = request.POST['asunto']
+        var_mensaje = request.POST['mensaje']
+        
+        contacto = Contacto()
+        contacto.nombres     = var_nombres
+        contacto.correo      = var_correo 
+        contacto.asunto      = var_asunto 
+        contacto.mensaje     = var_mensaje
+        contacto.save()
+        return render(request,"tienda/index.html",{})
+    else:
+        return render(request, 'personas/error/error_203.html', {})
+
+def administrador(request):
+    print("Hola estamos en la ventana admin")
+    
+    return render(request, 'administrador/administrador.html', {})
+   
+def usuarios(request):
+    print("Hola estamos en la ventana index")
+    context={}
+    return render(request, 'tienda/usuarios.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
