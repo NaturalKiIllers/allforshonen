@@ -30,105 +30,114 @@
     </header>
     
     <br><br><br>
-    <div id="left-sidebar-nav" class="hola">
-      <ul id="slide-out" class="side-nav fixed leftside-navigation ">
-        <li class="no-padding">
-                  
-          <ul class="collapsible">
-            <li>
-              <div class="collapsible-header ">Mangas</div>
-              <div class="collapsible-body">
-                <a href="MangaAg" class="waves-effect waves-cyan">
-                  <i class="material-icons">add</i>
-                  <span class="nav-text">Agregar</span>
-                </a>           
-                <a href="MangaEl" class="waves-effect waves-cyan">
-                  <i class="material-icons">delete</i>
-                  <span class="nav-text">Eliminar</span>
-                </a>
-                <a href="MangaBu" class="waves-effect waves-cyan">
-                  <i class="material-icons">search</i>
-                  <span class="nav-text">Buscar</span>
-                </a>
-                <a href="MangaL" class="waves-effect waves-cyan">
-                  <i class="material-icons">format_list_bulleted</i>
-                  <span class="nav-text">Listar</span>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">Figuras</div>
-              <div class="collapsible-body">
-                <a href="FiguraAg" class="waves-effect waves-cyan">
-                  <i class="material-icons">add</i>
-                  <span class="nav-text">Agregar</span>
-                </a>
-                <a href="FiguraEl" class="waves-effect waves-cyan">
-                  <i class="material-icons">delete</i>
-                  <span class="nav-text">Eliminar</span>
-                </a>
-                <a href="FiguraBu" class="waves-effect waves-cyan">
-                  <i class="material-icons">search</i>
-                  <span class="nav-text">Buscar</span>
-                </a>
-                <a href="FiguraL" class="waves-effect waves-cyan">
-                  <i class="material-icons">format_list_bulleted</i>
-                  <span class="nav-text">Listar</span>
-                </a>    
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">Artbook</div>
-              <div class="collapsible-body">
-                <a href="ArtAg" class="waves-effect waves-cyan">
-                  <i class="material-icons">add</i>
-                  <span class="nav-text">Agregar</span>
-                </a> 
-                <a href="ArtEl" class="waves-effect waves-cyan">
-                  <i class="material-icons">delete</i>
-                  <span class="nav-text">Eliminar</span>
-                </a>        
-                <a href="ArtBu" class="waves-effect waves-cyan">
-                  <i class="material-icons">search</i>
-                  <span class="nav-text">Buscar</span>
-                </a>        
-                <a href="ArtL" class="waves-effect waves-cyan">
-                  <i class="material-icons">format_list_bulleted</i>
-                  <span class="nav-text">Listar</span>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">Usuarios</div>
-              <div class="collapsible-body">
-                <a href="usuarioEl" class="waves-effect waves-cyan">
-                  <i class="material-icons">delete</i>
-                  <span class="nav-text">Eliminar</span>
-                </a>
-                <a href="usuarioBu" class="waves-effect waves-cyan">
-                  <i class="material-icons">search</i>
-                  <span class="nav-text">Buscar</span>
-                </a>
-                <a href="usuarioL" class="waves-effect waves-cyan">
-                  <i class="material-icons">format_list_bulleted</i>
+    {% if user.username|slice:"5" == 'admin' %}
+      <div id="left-sidebar-nav" class="hola">
+        <ul id="slide-out" class="side-nav fixed leftside-navigation ">
+          <li class="no-padding">
+                    
+            <ul class="collapsible">
+              <li>
+                <div class="collapsible-header ">Mangas</div>
+                <div class="collapsible-body">
+                  <a href="MangaAg" class="waves-effect waves-cyan">
+                    <i class="material-icons">add</i>
+                    <span class="nav-text">Agregar</span>
+                  </a>           
+                  <a href="MangaEl" class="waves-effect waves-cyan">
+                    <i class="material-icons">delete</i>
+                    <span class="nav-text">Eliminar</span>
+                  </a>
+                  <a href="MangaBu" class="waves-effect waves-cyan">
+                    <i class="material-icons">search</i>
+                    <span class="nav-text">Buscar</span>
+                  </a>
+                  <a href="MangaL" class="waves-effect waves-cyan">
+                    <i class="material-icons">format_list_bulleted</i>
                     <span class="nav-text">Listar</span>
-                </a>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header">Ver tienda</div>
-              <div class="collapsible-body">
-                <a href="index" class="waves-effect waves-cyan">
-                  <i class="material-icons">home</i>
-                  <span class="nav-text">Pagina Principal</span>
-                </a>
-              </div>
-              <a  href="{% url 'logout'%}" class="waves-effect waves-light btn red"><i class="material-icons left">logout </i>logout</a>
-            </li>
-          </ul>
-        </li> 
-      </ul>     
-    </div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Figuras</div>
+                <div class="collapsible-body">
+                  <a href="FiguraAg" class="waves-effect waves-cyan">
+                    <i class="material-icons">add</i>
+                    <span class="nav-text">Agregar</span>
+                  </a>
+                  <a href="FiguraEl" class="waves-effect waves-cyan">
+                    <i class="material-icons">delete</i>
+                    <span class="nav-text">Eliminar</span>
+                  </a>
+                  <a href="FiguraBu" class="waves-effect waves-cyan">
+                    <i class="material-icons">search</i>
+                    <span class="nav-text">Buscar</span>
+                  </a>
+                  <a href="FiguraL" class="waves-effect waves-cyan">
+                    <i class="material-icons">format_list_bulleted</i>
+                    <span class="nav-text">Listar</span>
+                  </a>    
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Artbook</div>
+                <div class="collapsible-body">
+                  <a href="ArtAg" class="waves-effect waves-cyan">
+                    <i class="material-icons">add</i>
+                    <span class="nav-text">Agregar</span>
+                  </a> 
+                  <a href="ArtEl" class="waves-effect waves-cyan">
+                    <i class="material-icons">delete</i>
+                    <span class="nav-text">Eliminar</span>
+                  </a>        
+                  <a href="ArtBu" class="waves-effect waves-cyan">
+                    <i class="material-icons">search</i>
+                    <span class="nav-text">Buscar</span>
+                  </a>        
+                  <a href="ArtL" class="waves-effect waves-cyan">
+                    <i class="material-icons">format_list_bulleted</i>
+                    <span class="nav-text">Listar</span>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Usuarios</div>
+                <div class="collapsible-body">
+                  <a href="usuarioEl" class="waves-effect waves-cyan">
+                    <i class="material-icons">delete</i>
+                    <span class="nav-text">Eliminar</span>
+                  </a>
+                  <a href="usuarioBu" class="waves-effect waves-cyan">
+                    <i class="material-icons">search</i>
+                    <span class="nav-text">Buscar</span>
+                  </a>
+                  <a href="usuarioL" class="waves-effect waves-cyan">
+                    <i class="material-icons">format_list_bulleted</i>
+                      <span class="nav-text">Listar</span>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Ver tienda</div>
+                <div class="collapsible-body">
+                  <a href="index" class="waves-effect waves-cyan">
+                    <i class="material-icons">home</i>
+                    <span class="nav-text">Pagina Principal</span>
+                  </a>
+                </div>
+                <a  href="{% url 'logout'%}" class="waves-effect waves-light btn red"><i class="material-icons left">logout </i>logout</a>
+              </li>
+            </ul>
+          </li> 
+        </ul>     
+      </div>
+    {% else %}
+        <div class="center">
+          <h1>¡Error!</h1>
+          <h5>Usted no es Admin</h5>
+          <br><br>
+          <button type="submit" class="btn red waves-effect"><a href="{% url 'login'%}" style="color:white;">Volver al Inicio de Sesión</a></button>
+      </div>
+    {% endif %}
   {% block content %}
       
   {% endblock %}     
