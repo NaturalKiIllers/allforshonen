@@ -19,11 +19,11 @@
                     <br>
                     <br>
                     <label for="contraseña">Contraseña </label>
-                    <input class="form-control" type="password" name="password">
+                    <input class="form-control" type="password" name="password" id="contraseña">
 
                     <br>
                     <label for="contraseña"> Confirmar Contraseña </label>
-                    <input class="form-control" type="password" name="password">
+                    <input class="form-control" type="password" name="password" id="contraseñaR" onblur="igualpassword()">
                     <br><br>
                     <input class="btn btn-success float-right red" type="submit" value="Confirmar" >
                     <br>
@@ -45,3 +45,24 @@
     </form>  
 
 {% endblock%}
+
+{% block javascripts%}
+    <script>
+    function igualpassword(){
+
+        var contraseña=document.getElementById("contraseña");
+        var contraseñaR=document.getElementById("contraseñaR");
+        if(contraseña.value !=contraseñaR.value)
+        {
+            
+        
+            alert("Por favor, revise las contraseñas no son iguales");
+        
+        
+        }
+        else{      
+        }
+    }  
+    </script>
+
+{% endblock %}
