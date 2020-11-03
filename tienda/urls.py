@@ -46,7 +46,7 @@ urlpatterns = [
     
     path('ingresar_correo', views.ingresar_correo, name='ingresar_correo'),
     path('cambiar_contra', views.cambiar_contra, name='cambiar_contra'),
-    path('correcto', views.correcto, name="correcto")
+    path('correcto', views.correcto, name="correcto"),
 
     path('registro', views.registro, name='registro'),
     path('agregar_usuario', views.agregar_usuario, name='agregar_usuario'),

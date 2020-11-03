@@ -513,7 +513,7 @@ def agregar_usuario(request):
             except IntegrityError:
                return render(request, 'respuesta_crud/cliente/existe.html', {})
         else:
-           return render(request, 'respuesta_crud/cliente/Vacio.html', {})
+           return render(request, 'respuesta_crud/cliente/vacio.html', {})
     else:
         return render(request, 'respuesta_crud/cliente/noexiste.html', {})
 
@@ -580,15 +580,13 @@ def editar_usuario(request):
     if request.method == 'POST':
         var_usuario = request.POST['username']
         var_contraseña  = request.POST['password']
-        var_is_active = request.POST["is_active"]
-        var_is_staff = request.POST["is_staff"]
         if var_usuario != "":
             try:
               
                usuario = User.objects.get(username=var_usuario)
                usuario.set_password(var_contraseña)
                usuario.save()
-               return render( request,'respuesta_crud/cliente/agregado_corr.html',{})
+               return render( request,'registration/correcto.html',{})
             except usuario.DoesNotExist:
                return render(request, 'respuesta_crud/productos/existe.html', {})
         else:
