@@ -508,10 +508,10 @@ def agregar_usuario(request):
                usuario.first_name = var_nombre
                usuario.last_name  = var_apellido
                usuario.save()
-               return render( request,'respuesta_crud/cliente/agregado_corr.html',{})
+               return render( request,'registration/agregado_corr.html',{})
 
             except IntegrityError:
-               return render(request, 'respuesta_crud/cliente/existe.html', {})
+               return render(request, 'registration/existe.html', {})
         else:
            return render(request, 'respuesta_crud/cliente/vacio.html', {})
     else:
