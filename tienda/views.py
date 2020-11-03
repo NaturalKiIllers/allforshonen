@@ -588,9 +588,9 @@ def editar_usuario(request):
                usuario.save()
                return render( request,'registration/correcto.html',{})
             except usuario.DoesNotExist:
-               return render(request, 'respuesta_crud/productos/existe.html', {})
+               return render(request, 'respuesta_crud/cliente/existe.html', {})
         else:
-           return render(request, 'respuesta_crud/productos/Vacio.html', {})
+           return render(request, 'respuesta_crud/cliente/vacio.html', {})
     else:
-        return render(request, 'respuesta_crud/productos/noexiste.html', {})
+        return render(request, 'respuesta_crud/cliente/noexiste.html', {})
   

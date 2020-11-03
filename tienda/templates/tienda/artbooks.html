@@ -3,55 +3,54 @@
 {%block title %} All for Shonen{% endblock%}
 
 {% block content%}
-<br><br><br><br>
-    <div class="Container">
-      <div class="row">
-        <div class="col s3"></div>
-        <div class="carousel carousel-slider " style="height: 450px; width: 1110px;">
-          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/artbook/kimetsu2.jpg' %}" alt="kime" class="responsive-img" style="height: 400px"></a>
-          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/artbook/kirby3.jpg' %}" alt="kirby" class="responsive-img" style="height: 400px"></a>
-          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/artbook/onepiece2.jpg' %}" alt="one" class="responsive-img" style="height: 400px;"></a>
+  <br><br><br><br>
+      <div class="Container">
+        <div class="row">
+          <div class="col s3"></div>
+          <div class="carousel carousel-slider " style="height: 450px; width: 1110px;">
+            <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/artbook/kimetsu2.jpg' %}" alt="kime" class="responsive-img" style="height: 400px"></a>
+            <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/artbook/kirby3.jpg' %}" alt="kirby" class="responsive-img" style="height: 400px"></a>
+            <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/artbook/onepiece2.jpg' %}" alt="one" class="responsive-img" style="height: 400px;"></a>
+          </div>
+        </div>
+      </div>
+      <!--ArtBooks-->
+      <div class="container ">
+        <div class="row ">
+          <div class="col 1"></div>
+          <h1>Artbooks</h1>
+          <br>
+          <div class="col 1"></div>
+          {% for artbook in artbooks %}
+            
+          <div class="card white left hoverable" style="height: 320px; width: 200px;">
+            <div class="card-image">
+              <img class="materialboxed" src="{{artbook.fotoArtbook.url}}"  style="height: 200px; width: 200px;">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">{{artbook.nombre}}<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">${{artbook.precio}}</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">{{artbook.nombre_desc}}<i class="material-icons right">close</i></span>
+              <p>{{artbook.descripcion}}</p>
+            </div>
+          </div>  
+          <div class="col 1"></div>
+
+        {% endfor %}
+        
+        </div>
+      
+      </div>
+      
+      <!--parallax-->
+      <div class="col s1"></div>
+      <div class="parallax-container">
+        <div class="parallax">
+            <img src="{% static 'imagenes/artbook/paralax.jpg' %}" alt="para">
         </div>
       </div>
     </div>
-    <!--ArtBooks-->
-    <div class="container ">
-      <div class="row ">
-        <div class="col 1"></div>
-        <h1>Artbooks</h1>
-        <br>
-        <div class="col 1"></div>
-        {% for artbook in artbooks %}
-          
-        <div class="card white left hoverable" style="height: 320px; width: 200px;">
-          <div class="card-image">
-            <img class="materialboxed" src="{{artbook.fotoArtbook.url}}"  style="height: 200px; width: 200px;">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{{artbook.nombre}}<i class="material-icons right">more_vert</i></span>
-            <p><a href="#">${{artbook.precio}}</a></p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{artbook.nombre_desc}}<i class="material-icons right">close</i></span>
-            <p>{{artbook.descripcion}}</p>
-            
-          </div>
-        </div>  
-        <div class="col 1"></div>
-
-       {% endfor %}
-      
-      </div>
-     
-    </div>
-    
-    <!--parallax-->
-    <div class="col s1"></div>
-    <div class="parallax-container">
-      <div class="parallax">
-          <img src="{% static 'imagenes/artbook/paralax.jpg' %}" alt="para">
-      </div>
-    </div>
-  </div>
-    <br>
+      <br>
 {% endblock %}

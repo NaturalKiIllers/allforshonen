@@ -4,151 +4,131 @@
 
 {% block content%}
 
-    <br><br><br><br>
-    <div class="container">
-      <div class="row">
-        <div class="col s3"></div>
-        <div class="carousel carousel-slider " style="height: 450px; width: 1300px;">
-          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/EDIT.png' %}" class="responsive-img" style="height: 400px;" alt="carrusel-1"></a>
-          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/SLAM.jpg' %}" class="responsive-img" style="height: 400px; " alt="carrusel-2"></a>
-          <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/MT.jpg' %}" class="responsive-img" style="height: 400px; " alt="carrusel-3"></a>
-        </div>
+  <br><br><br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col s3"></div>
+      <div class="carousel carousel-slider " style="height: 450px; width: 1300px;">
+        <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/EDIT.png' %}" class="responsive-img" style="height: 400px;" alt="carrusel-1"></a>
+        <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/SLAM.jpg' %}" class="responsive-img" style="height: 400px; " alt="carrusel-2"></a>
+        <a class="carousel-item" href="#one!"><img src="{% static 'imagenes/mangas/slider/MT.jpg' %}" class="responsive-img" style="height: 400px; " alt="carrusel-3"></a>
       </div>
     </div>
-    <br>
+  </div>
+  <br>
       <!--TODO:Productos-->
        <!--TODO:Slam Dunk-->
-    <div class="row">
-      <h1>Productos Ivrea España</h1>
-    </div>
-    <div class="row">
-      <div class="col s1"></div>
-      <h1>Slam Dunk</h1>
-      <br>
-      <div class="col s1"></div>
-    
-       {% for manga in slams %}
-     
-      
-       <div class="card white left hoverable" style="height: 320px; width: 200px;">
-         <div class="card-image">
-           <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
-         </div>
-         <div class="card-content">
-           <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
-           <p><a href="#">${{manga.precio}}</a></p>
-         </div>
-         <div class="card-reveal">
-           <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
-           <p>{{manga.descripcion}}</p>
-           
-         </div>
-       </div>  
-       <div class="col 1"></div>
-      
-       {% endfor %}
-      
-      </div>
-     
-      <div class="row">
-        <div class="col s1"></div>
-        <h1>Dr.Stone</h1>
-        <br>
-        <div class="col s1"></div>
-         {% for manga in stones %}
-        
-         <div class="card white left hoverable" style="height: 320px; width: 200px;">
-           <div class="card-image">
-             <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
-           </div>
-           <div class="card-content">
-             <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
-             <p><a href="#">${{manga.precio}}</a></p>
-           </div>
-           <div class="card-reveal">
-             <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
-             <p>{{manga.descripcion}}</p>
-             
-           </div>
-         </div>  
-         <div class="col 1"></div>
-         
-   
-        
-         {% endfor %}
-        
-        </div>
-        <!--TODO:IMAGEN DE FONDO-->     
-        <div class="parallax-container">
-          <div class="parallax">
-            <img src="{% static 'imagenes/mangas/prueba.jpg'%}" alt="paralax">
+  <div class="row">
+    <h1>Productos Ivrea España</h1>
+  </div>
+  <div class="row">
+    <div class="col s1"></div>
+    <h1>Slam Dunk</h1>
+    <br>
+    <div class="col s1"></div>
+    {% for manga in slams %}
+      <div class="card white left hoverable" style="height: 320px; width: 200px;">
+          <div class="card-image">
+            <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
           </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">${{manga.precio}}</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
+            <p>{{manga.descripcion}}</p> 
+         </div>
+      </div>  
+      <div class="col 1"></div>
+      {% endfor %}  
+  </div>
+     
+  <div class="row">
+    <div class="col s1"></div>
+    <h1>Dr.Stone</h1>
+    <br>
+    <div class="col s1"></div>
+    {% for manga in stones %}
+      <div class="card white left hoverable" style="height: 320px; width: 200px;">
+        <div class="card-image">
+          <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
         </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">${{manga.precio}}</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
+          <p>{{manga.descripcion}}</p>   
+        </div>
+      </div>  
+      <div class="col 1"></div>
+              
+    {% endfor %}
+        
+  </div>
+        <!--TODO:IMAGEN DE FONDO-->     
+  <div class="parallax-container">
+    <div class="parallax">
+      <img src="{% static 'imagenes/mangas/prueba.jpg'%}" alt="paralax">
+    </div>
+  </div>
         
        <!--TODO:productos Norma-->
        <!--TODO:Fullmetal-->
        
-       <div class="row">
-        <h1>Productos Norma España</h1>
-      </div>
-      <div class="row ">
-        <div class="col s1"></div>
-        <h1>Fullmetal Alchimist Brotherhood</h1>
-        <br>
-        <div class="col s1"></div>
-         {% for manga in fhs %}
-         <div class="card white left hoverable"  style="height: 320px; width: 200px;">
-           <div class="card-image ">
-             <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
-           </div>
-           <div class="card-content">
-             <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
-             <p><a href="#">${{manga.precio}}</a></p>
-           </div>
-           <div class="card-reveal">
-             <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
-             <p>{{manga.descripcion}}</p>
-             
-           </div>
-         </div>  
-         <div class="col 1"></div>
-       
-        
-         {% endfor %}
-        
+  <div class="row">
+    <h1>Productos Norma España</h1>
+  </div>
+  <div class="row ">
+    <div class="col s1"></div>
+    <h1>Fullmetal Alchimist Brotherhood</h1>
+    <br>
+    <div class="col s1"></div>
+    {% for manga in fhs %}
+      <div class="card white left hoverable"  style="height: 320px; width: 200px;">
+        <div class="card-image ">
+          <img class="materialboxed" src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
         </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">${{manga.precio}}</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
+          <p>{{manga.descripcion}}</p>     
+        </div>
+      </div>  
+      <div class="col 1"></div>
+    {% endfor %}
         
-        <br>
+  </div>
         
-        <div class="row ">
-          <div class="col s1"></div>
-          <h1>Kimetsu No Yaiba</h1>
-          <br>
-          <div class="col s1"></div>
-           {% for manga in kns %}
-           
-           <div class="card white left hoverable" style="height: 320px; width: 200px;">
-             <div class="card-image">
-               <img class="materialboxed " src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
-             </div>
-             <div class="card-content">
-               <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
-               <p><a href="#">${{manga.precio}}</a></p>
-             </div>
-             <div class="card-reveal">
-               <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
-               <p>{{manga.descripcion}}</p>
-               
-             </div>
-           </div>  
-           <div class="col 1"></div>
-           
-      
-           {% endfor %}
-          
-          </div>
+  <br>
         
-    
+  <div class="row ">
+    <div class="col s1"></div>
+    <h1>Kimetsu No Yaiba</h1>
+    <br>
+    <div class="col s1"></div>
+    {% for manga in kns %}
+      <div class="card white left hoverable" style="height: 320px; width: 200px;">
+        <div class="card-image">
+          <img class="materialboxed " src="{{manga.fotoManga.url}}"  style="height: 200px; width: 200px;">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">{{manga.nombre}}<i class="material-icons right">more_vert</i></span>
+          <p><a href="#">${{manga.precio}}</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{manga.nombre_desc}}<i class="material-icons right">close</i></span>
+          <p>{{manga.descripcion}}</p> 
+        </div>
+      </div>  
+      <div class="col 1"></div>
+    {% endfor %}
+  </div>
     <br>
     <br>   
-{% endblock %}
+  {% endblock %}
